@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/StartStyle.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Style1.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.10.2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/startScript.js")" type="text/javascript"></script>
+</head>
+<body>
+    <div style="position:absolute;top:50%;left:50%;margin-left:-233px; margin-top:-150px;" >
+        @RenderBody()
+    </div>
+</body>
+</html>

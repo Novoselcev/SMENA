@@ -1,0 +1,66 @@
+
+@{
+    var grid = Html.DevExpress().GridView(settings => {
+        settings.Name = "GridViewSubOPer";
+        settings.CallbackRouteValues = new { Controller = "Home", Action = "tabPodOper1" };
+
+
+        settings.SettingsPager.Visible = true;
+        settings.Settings.ShowGroupPanel = false;
+        settings.Settings.ShowFilterRow = false;
+        settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+        settings.KeyFieldName = "Uvorn";
+        foreach (var col in (List<SSZ.Models.SetTab>) ViewBag.GridSubOper)
+        {
+            settings.Columns.Add(c =>
+            {
+                c.FieldName = col.Name;
+                c.Caption = col.DescripS;
+                c.Width = col.width;
+                c.CellStyle.Font.Size = col.fontSize;
+                c.Visible = col.visibleCol;
+            });
+        }
+
+
+        /*    settings.Columns.Add(c =>
+            {
+                c.FieldName = "subOperNameAFVC";
+                c.Caption = "Наименование операции";
+                c.Width = 300;
+                c.CellStyle.Font.Size = 10;
+            });
+
+            settings.Columns.Add(c =>
+            {
+                c.FieldName = "workPlaceCRHD";
+                c.Caption = "Рабочее место";
+                c.Width = 150;
+                c.CellStyle.Font.Size = 10;
+            });
+
+            settings.Columns.Add(c =>
+            {
+                c.FieldName = "workPlaceDescrCRTX";
+                c.Caption = "Описание рабочего места";
+                c.Width = 100;
+                c.CellStyle.Font.Size = 10;
+
+            });*/
+        settings.Width = 800;
+        settings.Styles.Header.BackgroundImage.ImageUrl = "none";
+        settings.Styles.Header.BackColor = System.Drawing.ColorTranslator.FromHtml("#024c97");
+        settings.Styles.Header.ForeColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+        settings.Styles.Header.CssClass = "headerTab";
+        settings.Styles.AlternatingRow.Enabled = DefaultBoolean.True;
+        settings.Styles.AlternatingRow.BackColor = System.Drawing.ColorTranslator.FromHtml("#c1c1c1");
+        settings.Styles.Row.Font.Bold = true;
+        settings.Settings.HorizontalScrollBarMode = ScrollBarMode.Visible;
+        // settings.Settings.VerticalScrollBarMode = ScrollBarMode.Visible;
+        //settings.Settings.VerticalScrollableHeight =300;
+        settings.SettingsPager.Mode = GridViewPagerMode.EndlessPaging;
+
+    });
+}
+@grid.Bind(Model).GetHtml()

@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:n1="urn:sap-com:document:sap:rfc:functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl" />
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true" />
+  <wsp:Policy wsu:Id="BN__YSFC_GET_NOTIF_PRO_ITEMS_BIND">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedMimeSerialization xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" wsp:Optional="true" />
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+        <wsp:All xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+          <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+            <wsp:Policy>
+              <sp:TransportToken>
+                <wsp:Policy>
+                  <sp:HttpsToken>
+                    <wsp:Policy>
+                      <sp:HttpBasicAuthentication />
+                    </wsp:Policy>
+                  </sp:HttpsToken>
+                </wsp:Policy>
+              </sp:TransportToken>
+              <sp:AlgorithmSuite>
+                <wsp:Policy>
+                  <sp:Basic128Rsa15 />
+                </wsp:Policy>
+              </sp:AlgorithmSuite>
+              <sp:Layout>
+                <wsp:Policy>
+                  <sp:Strict />
+                </wsp:Policy>
+              </sp:Layout>
+            </wsp:Policy>
+          </sp:TransportBinding>
+        </wsp:All>
+      </wsp:All>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/" wsp:Optional="true" />
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+        <wsp:All xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+          <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+            <wsp:Policy>
+              <sp:TransportToken>
+                <wsp:Policy>
+                  <sp:HttpsToken>
+                    <wsp:Policy>
+                      <sp:HttpBasicAuthentication />
+                    </wsp:Policy>
+                  </sp:HttpsToken>
+                </wsp:Policy>
+              </sp:TransportToken>
+              <sp:AlgorithmSuite>
+                <wsp:Policy>
+                  <sp:Basic128Rsa15 />
+                </wsp:Policy>
+              </sp:AlgorithmSuite>
+              <sp:Layout>
+                <wsp:Policy>
+                  <sp:Strict />
+                </wsp:Policy>
+              </sp:Layout>
+            </wsp:Policy>
+          </sp:TransportBinding>
+        </wsp:All>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BN__YSFC_GET_NOTIF_PRO_ITEMS_BIND_soap12">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedMimeSerialization xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" wsp:Optional="true" />
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+        <wsp:All xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+          <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+            <wsp:Policy>
+              <sp:TransportToken>
+                <wsp:Policy>
+                  <sp:HttpsToken>
+                    <wsp:Policy>
+                      <sp:HttpBasicAuthentication />
+                    </wsp:Policy>
+                  </sp:HttpsToken>
+                </wsp:Policy>
+              </sp:TransportToken>
+              <sp:AlgorithmSuite>
+                <wsp:Policy>
+                  <sp:Basic128Rsa15 />
+                </wsp:Policy>
+              </sp:AlgorithmSuite>
+              <sp:Layout>
+                <wsp:Policy>
+                  <sp:Strict />
+                </wsp:Policy>
+              </sp:Layout>
+            </wsp:Policy>
+          </sp:TransportBinding>
+        </wsp:All>
+      </wsp:All>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/" wsp:Optional="true" />
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+        <wsp:All xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+          <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+            <wsp:Policy>
+              <sp:TransportToken>
+                <wsp:Policy>
+                  <sp:HttpsToken>
+                    <wsp:Policy>
+                      <sp:HttpBasicAuthentication />
+                    </wsp:Policy>
+                  </sp:HttpsToken>
+                </wsp:Policy>
+              </sp:TransportToken>
+              <sp:AlgorithmSuite>
+                <wsp:Policy>
+                  <sp:Basic128Rsa15 />
+                </wsp:Policy>
+              </sp:AlgorithmSuite>
+              <sp:Layout>
+                <wsp:Policy>
+                  <sp:Strict />
+                </wsp:Policy>
+              </sp:Layout>
+            </wsp:Policy>
+          </sp:TransportBinding>
+        </wsp:All>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF__YSFC_GET_NOTIF_PRO_ITEMS_WEBS">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+          <sapsession:enableSession>false</sapsession:enableSession>
+        </sapsession:Session>
+        <sapcentraladmin:CentralAdministration xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/" wsp:Optional="true">
+          <sapcentraladmin:BusinessApplicationID>0050569B52901ED5BFB3A8BCF1BCE0D3</sapcentraladmin:BusinessApplicationID>
+        </sapcentraladmin:CentralAdministration>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__YsfcGetNotifProItemsWs">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char12">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="12" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char15">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="15" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char18">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="18" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char2">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="2" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char22">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="22" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char40">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="40" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char8">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="8" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="shortString1023">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1023" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="shortString64">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="64" />
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema xmlns:n0="urn:sap-com:document:sap:rfc:functions" attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style">
+      <xsd:import namespace="urn:sap-com:document:sap:rfc:functions" />
+      <xsd:simpleType name="RfcException.Message.Number">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char2">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="2" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="YsfcOperQnoticeWs">
+        <xsd:sequence>
+          <xsd:element name="Aufnr" type="n0:char12" />
+          <xsd:element name="Vornr" type="n0:char4" />
+          <xsd:element name="Uvorn" type="n0:char4" />
+          <xsd:element name="Objnr" type="n0:char22" />
+          <xsd:element name="Asszl" type="n0:char4" />
+          <xsd:element name="Coord" type="n0:char12" />
+          <xsd:element name="CoordFn" type="n0:shortString64" />
+          <xsd:element name="Qmnum" type="n0:char12" />
+          <xsd:element name="Qmart" type="n0:char2" />
+          <xsd:element name="Qmkat" type="n0:char1" />
+          <xsd:element name="Qmgrp" type="n0:char8" />
+          <xsd:element name="Qmcod" type="n0:char4" />
+          <xsd:element name="Otkat" type="n0:char1" />
+          <xsd:element name="Otgrp" type="n0:char8" />
+          <xsd:element name="Oteil" type="n0:char4" />
+          <xsd:element name="Rkmng" type="n0:char15" />
+          <xsd:element name="Mgein" type="n0:char3" />
+          <xsd:element name="Text" type="n0:shortString1023" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="YsfcQnoteItemWs">
+        <xsd:sequence>
+          <xsd:element name="Posnr" type="n0:char4" />
+          <xsd:element name="Stufe" type="tns:char2" />
+          <xsd:element name="Wegxx" type="tns:char4" />
+          <xsd:element name="Vwegx" type="tns:char4" />
+          <xsd:element name="Bautl" type="n0:char18" />
+          <xsd:element name="Prueflinr" type="n0:char18" />
+          <xsd:element name="Anzfehler" type="n0:char4" />
+          <xsd:element name="Fmgeig" type="n0:char15" />
+          <xsd:element name="Fmgein" type="n0:char3" />
+          <xsd:element name="FlgMark" type="n0:char1" />
+          <xsd:element name="BautlTxt" type="n0:char40" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RfcException.Message">
+        <xsd:sequence>
+          <xsd:element name="ID" type="xsd:string" />
+          <xsd:element name="Number" type="tns:RfcException.Message.Number" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="YsfcGetNotifProItemsWs.RfcException">
+        <xsd:sequence>
+          <xsd:element name="Name" type="tns:YsfcGetNotifProItemsWs.RfcExceptions" />
+          <xsd:element minOccurs="0" name="Text" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Message" type="tns:RfcException.Message" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="YsfcQnoteItemsTabWs">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:YsfcQnoteItemWs" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="YsfcGetNotifProItemsWs.RfcExceptions">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="InsufficientKey" />
+          <xsd:enumeration value="SessionError" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="YsfcGetNotifProItemsWs.Exception" type="tns:YsfcGetNotifProItemsWs.RfcException" />
+      <xsd:element name="YsfcGetNotifProItemsWs">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IId" type="n0:char10" />
+            <xsd:element name="IQnoticeData" type="tns:YsfcOperQnoticeWs" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="YsfcGetNotifProItemsWsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EtQnoticeItems" type="tns:YsfcQnoteItemsTabWs" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="YsfcGetNotifProItemsWs">
+    <wsdl:part name="parameters" element="tns:YsfcGetNotifProItemsWs" />
+  </wsdl:message>
+  <wsdl:message name="YsfcGetNotifProItemsWsResponse">
+    <wsdl:part name="parameter" element="tns:YsfcGetNotifProItemsWsResponse" />
+  </wsdl:message>
+  <wsdl:message name="YsfcGetNotifProItemsWs.Exception">
+    <wsdl:part name="YsfcGetNotifProItemsWs.Exception" element="tns:YsfcGetNotifProItemsWs.Exception" />
+  </wsdl:message>
+  <wsdl:portType name="YSFC_GET_NOTIF_PRO_ITEMS_WEBS">
+    <wsdl:documentation>
+      <sapdoc:sapdoc xmlns:sapdoc="urn:sap:esi:documentation">
+        <sapdoc:docitem docURL="http://erp-dev.sapfir.local:8000/sap/bc/esdt/docu/sd_text?sap-client=400&amp;sd_name=YSFC_GET_NOTIF_PRO_ITEMS_WEBS" />
+        <sapdoc:docitem applicationComponent="PP-SFC" />
+      </sapdoc:sapdoc>
+    </wsdl:documentation>
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF__YSFC_GET_NOTIF_PRO_ITEMS_WEBS" />
+    </wsp:Policy>
+    <wsdl:operation name="YsfcGetNotifProItemsWs">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__YsfcGetNotifProItemsWs" />
+      </wsp:Policy>
+      <wsdl:input message="tns:YsfcGetNotifProItemsWs" />
+      <wsdl:output message="tns:YsfcGetNotifProItemsWsResponse" />
+      <wsdl:fault name="YsfcGetNotifProItemsWs.Exception" message="tns:YsfcGetNotifProItemsWs.Exception" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="YSFC_GET_NOTIF_PRO_ITEMS_BIND" type="tns:YSFC_GET_NOTIF_PRO_ITEMS_WEBS">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN__YSFC_GET_NOTIF_PRO_ITEMS_BIND" />
+    </wsp:Policy>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="YsfcGetNotifProItemsWs">
+      <soap:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:YSFC_GET_NOTIF_PRO_ITEMS_WEBS:YsfcGetNotifProItemsWsRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="YsfcGetNotifProItemsWs.Exception">
+        <soap:fault use="literal" name="YsfcGetNotifProItemsWs.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="YSFC_GET_NOTIF_PRO_ITEMS_BIND_soap12" type="tns:YSFC_GET_NOTIF_PRO_ITEMS_WEBS">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN__YSFC_GET_NOTIF_PRO_ITEMS_BIND_soap12" />
+    </wsp:Policy>
+    <wsoap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="YsfcGetNotifProItemsWs">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:soap:functions:mc-style:YSFC_GET_NOTIF_PRO_ITEMS_WEBS:YsfcGetNotifProItemsWsRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="YsfcGetNotifProItemsWs.Exception">
+        <wsoap12:fault use="literal" name="YsfcGetNotifProItemsWs.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="YSFC_GET_NOTIF_PRO_ITEMS">
+    <wsdl:port name="YSFC_GET_NOTIF_PRO_ITEMS_BIND" binding="tns:YSFC_GET_NOTIF_PRO_ITEMS_BIND">
+      <soap:address location="http://erp-dev.sapfir.local:8000/sap/bc/srt/rfc/sap/ysfc_get_notif_pro_items_webs/400/ysfc_get_notif_pro_items/ysfc_get_notif_pro_items_bind" />
+    </wsdl:port>
+    <wsdl:port name="YSFC_GET_NOTIF_PRO_ITEMS_BIND_soap12" binding="tns:YSFC_GET_NOTIF_PRO_ITEMS_BIND_soap12">
+      <wsoap12:address location="http://erp-dev.sapfir.local:8000/sap/bc/srt/rfc/sap/ysfc_get_notif_pro_items_webs/400/ysfc_get_notif_pro_items/ysfc_get_notif_pro_items_bind" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,19 @@
+﻿@model SSZ.Models.DefectOZM
+
+@{
+    Layout = null;
+}
+
+<div> <!--style="color:#fff;margin:20px;background-color:#2c2c2c;"-->
+    <table class="tableDef" style="position:relative;right:2.7em;float:right;background-color:">
+        <tr><td>Позиционное обозначение:</td><td style="padding:0px !important;">@Html.TextBoxFor(m => m.Prueflinr)  </td>
+        <td>Количество:</td><td style="padding:0px !important;">@Html.TextBoxFor(m => m.Anzfehler)</td>
+      
+        <tr>
+            
+            <td colspan="2" align="center" style="border:0; background-color:#2f2f2f;" ><a  onclick="TreelistUpdate()" class="btn btn-primary btn-lg">Сохранить</a></td>
+            
+            <td colspan="2" align="center"  style="border:0; background-color:#2f2f2f;"><a  onclick="TreelistClose()"  class="btn btn-primary btn-lg">Закрыть</a></td>
+        </tr>
+ </table>
+</div>

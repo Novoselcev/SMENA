@@ -1,0 +1,96 @@
+﻿@model SSZ.PutNotification.YsfcOperQnoticeWs
+
+<div class="popup__main">
+    <div style="background-color:#1a1a1a;border: 1px solid #6d6d6d; border-top: none; padding: 20px;">
+     
+        @Html.DevExpress().PageControl(settings =>
+   {
+       settings.Name = "TabControlMessage";
+       // settings.ActiveTabIndex = Convert.ToInt32(ViewBag.pageID);
+       settings.Styles.Content.Border.BorderColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+       settings.Styles.Content.Border.BorderStyle = BorderStyle.Solid;
+       settings.Styles.Content.BackColor = System.Drawing.ColorTranslator.FromHtml("#2a2a2a");
+       settings.Styles.Content.BackgroundImage.ImageUrl = "/Content/Images/hidden.png";
+       settings.Height = Unit.Percentage(100);
+       settings.Width = 645;
+       settings.TabPages.Add(tab =>
+       {
+           tab.Name = "TabM 0";
+           tab.Text = "Основные данные";
+           tab.TabStyle.Font.Size = 14;
+           tab.ActiveTabStyle.Border.BorderColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+           tab.TabStyle.BackgroundImage.ImageUrl = "/Content/Images/hidden.png"; ;
+           tab.TabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+           tab.TabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#aaaaaa");
+           tab.ActiveTabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#2a2a2a");
+           tab.ActiveTabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#FFFFFF");
+           tab.SetContent(() =>
+           {
+               Html.RenderPartial("messageForm", Model);
+           });
+
+
+       });
+
+       settings.TabPages.Add(tab =>
+       {
+           tab.Name = "TabM 1";
+           tab.Text = "Дефектный материал (КИ)";
+           tab.TabStyle.Font.Size = 14;
+           tab.ActiveTabStyle.Border.BorderColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+           tab.TabStyle.BackgroundImage.ImageUrl = "/Content/Images/hidden.png"; ;
+           tab.TabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+           tab.TabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#aaaaaa");
+           tab.ActiveTabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#2a2a2a");
+           tab.ActiveTabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#FFFFFF");
+
+           tab.SetContent(() =>
+           {
+               ViewContext.Writer.Write("<span id='selectedNodeIDsMainPage' style='visibility:hidden;font-size:3px;'></span>");
+
+               ViewContext.Writer.Write("<div style='clear:both' ></div><div style='margin:5px 0px 7px 0px'><table><tr><td>");
+               ViewContext.Writer.Write(@Html.DevExpress().TextBox(settings1 =>
+               {
+                   settings1.Name = "SerchText1";
+                   settings1.Properties.NullText = "Search ...";
+                   settings1.Width = Unit.Pixel(250);
+                   settings1.ControlStyle.CssClass = "inline-editor";
+                   settings1.Height = 30;
+
+               }).GetHtml());
+               ViewContext.Writer.Write("</td><td style='height:35px;'><a style='height:15px;font-size:12px;'  onclick='onSerchButtomClick()'  class='btn btn-primary btn-lg'>Поиск</a></td></tr></table></div>");
+               Html.RenderAction("QmOzmDefect");
+
+
+
+           });
+
+
+       });
+   }).GetHtml()
+
+
+        <table style="width: 100%;">
+            <tr>
+                <td align="left" style="padding: 20px 0px 10px 0px; color: white; font-size: 14px;">Описание</td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.TextAreaFor(x => x.Text)
+                </td>
+            </tr>
+            
+        </table>
+    </div>
+    <br />
+    <table class="popup__table_bot" style="width:100%;">
+        <tr>
+            <td align="center" style="padding: 20px 0px 10px 120px;">
+            @if(ViewBag.EBut==false) { 
+                <a href="javascript:SentMessage();" class="button tick"></a>
+                }
+            </td>
+            <td align="center" style="padding: 20px 50px 10px 350px;"><a href="javascript:PopupMessage.Hide();" class="button cross"></a></td>
+        </tr>
+    </table>
+</div>

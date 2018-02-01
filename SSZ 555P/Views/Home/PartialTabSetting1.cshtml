@@ -1,0 +1,150 @@
+﻿@{ Layout = null; }
+
+<script type="text/javascript" src="~/Scripts/jquery-ui.min.js"></script>
+<div class="HeaderSetting" >Настройка вида таблиц</div>
+
+@Html.DevExpress().PageControl(settings =>
+{
+    settings.Name = "TabControlSetting";
+    settings.ActiveTabIndex = Convert.ToInt32(ViewBag.pageID);
+    settings.Styles.Content.Border.BorderColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+    settings.Styles.Content.Border.BorderStyle = BorderStyle.Solid;
+    settings.Styles.Content.BackColor = System.Drawing.ColorTranslator.FromHtml("#2a2a2a");
+    settings.Styles.Content.BackgroundImage.ImageUrl = "none";
+    settings.Height = Unit.Percentage(100);
+    settings.TabPages.Add(tab =>
+    {
+        tab.Name = "Tab 0";
+        tab.Text = "Операции";
+        tab.TabStyle.Font.Size = 14;
+        tab.ActiveTabStyle.Border.BorderColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+        tab.TabStyle.BackgroundImage.ImageUrl = "none";
+        tab.TabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+        tab.TabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#aaaaaa");
+        tab.ActiveTabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#2a2a2a");
+        tab.ActiveTabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#FFFFFF");
+        tab.SetContent(() =>
+        {
+            Html.RenderAction("GridOper", "Setting", null);
+            // ViewContext.Writer.Write("<span id='subOperationsTab'></span>");
+        });
+
+
+    });
+    settings.TabPages.Add(tab =>
+    {
+        tab.Name = "Tab 1";
+        tab.Text = "Подоперации";
+        tab.TabStyle.Font.Size = 14;
+        tab.ActiveTabStyle.Border.BorderColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+        tab.TabStyle.BackgroundImage.ImageUrl = "none";
+        tab.TabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+        tab.TabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#aaaaaa");
+        tab.ActiveTabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#2a2a2a");
+        tab.ActiveTabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#FFFFFF");
+
+        tab.SetContent(() =>
+        {
+
+            Html.RenderAction("SubOperGrid", "Setting", null);
+
+        });
+
+
+    });
+
+    settings.TabPages.Add(tab =>
+    {
+        tab.Name = "Tab 4";
+        tab.Text = "Документы";
+        tab.TabStyle.Font.Size = 14;
+        tab.ActiveTabStyle.Border.BorderColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+        tab.TabStyle.BackgroundImage.ImageUrl = "none";
+        tab.TabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+        tab.TabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#aaaaaa");
+        tab.ActiveTabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#2a2a2a");
+        tab.ActiveTabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#FFFFFF");
+        tab.SetContent(() =>
+        {
+            Html.RenderAction("DocGrid", "Setting", null);
+        });
+
+
+    });
+
+    settings.TabPages.Add(tab =>
+    {
+        tab.Name = "Tab 2";
+        tab.Text = "Компоненты";
+        tab.TabStyle.Font.Size = 14;
+        tab.ActiveTabStyle.Border.BorderColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+        tab.TabStyle.BackgroundImage.ImageUrl = "none";
+        tab.TabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+        tab.TabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#aaaaaa");
+        tab.ActiveTabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#2a2a2a");
+        tab.ActiveTabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#FFFFFF");
+        tab.SetContent(() =>
+        {
+            Html.RenderAction("CompGrid", "Setting", null);
+        });
+
+
+    });
+
+    settings.TabPages.Add(tab =>
+    {
+        tab.Name = "Tab 3";
+        tab.Text = "ВПС";
+        tab.TabStyle.Font.Size = 14;
+        tab.ActiveTabStyle.Border.BorderColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+        tab.TabStyle.BackgroundImage.ImageUrl = "none";
+        tab.TabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+        tab.TabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#aaaaaa");
+        tab.ActiveTabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#2a2a2a");
+        tab.ActiveTabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#FFFFFF");
+        tab.SetContent(() =>
+        {
+            Html.RenderAction("VPSGrid", "Setting", null);
+        });
+
+
+    });
+    settings.TabPages.Add(tab =>
+    {
+        tab.Name = "Tab 5";
+        tab.Text = "Серийные номера";
+        tab.TabStyle.Font.Size = 14;
+        tab.ActiveTabStyle.Border.BorderColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+        tab.TabStyle.BackgroundImage.ImageUrl = "none";
+        tab.TabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+        tab.TabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#aaaaaa");
+        tab.ActiveTabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#2a2a2a");
+        tab.ActiveTabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#FFFFFF");
+        tab.SetContent(() =>
+        {
+            Html.RenderAction("SRGrid", "Setting", null);
+        });
+
+
+    });
+
+    settings.TabPages.Add(tab =>
+    {
+        tab.Name = "Tab 6";
+        tab.Text = "Премия рабочих";
+        tab.TabStyle.Font.Size = 14;
+        tab.ActiveTabStyle.Border.BorderColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+        tab.TabStyle.BackgroundImage.ImageUrl = "none";
+        tab.TabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+        tab.TabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#aaaaaa");
+        tab.ActiveTabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#2a2a2a");
+        tab.ActiveTabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#FFFFFF");
+        tab.SetContent(() =>
+        {
+            Html.RenderAction("PrimeGrid", "Setting", null);
+        });
+
+
+    });
+
+}).GetHtml()

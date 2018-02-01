@@ -1,0 +1,32 @@
+﻿
+@Html.DevExpress().PopupControl(settings =>
+{
+    settings.Name = "PopupRedAlertSimple";
+    settings.AllowResize = false;
+    settings.ShowHeader = false;
+    settings.ShowOnPageLoad = false;
+    settings.AllowDragging = true;
+    settings.DragElement = DragElement.Window;
+    settings.CloseAction = CloseAction.CloseButton;
+    settings.CloseOnEscape = true;
+    settings.Modal = true;
+    settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+    settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
+    settings.Styles.Content.BackColor = System.Drawing.Color.Transparent;
+    settings.PopupElementID = "redAlertSimpleTab";
+    settings.SetContent(() =>
+    {
+        ViewContext.Writer.Write("<div style='float: right; position: relative; right: -45px;'>");
+        Html.DevExpress().Image(image =>
+        {
+            image.Name = "Closebut1";
+            image.ImageUrl = "~/Content/Images/CloseButtonCross.png";
+            image.Width = 40;
+            image.Height = 40;
+            image.Properties.EnableClientSideAPI = true;
+            image.Properties.ClientSideEvents.Click = "function(s,e) {PopupRedAlertSimple.Hide();}";
+        }).Render();
+        ViewContext.Writer.Write("</div>");
+        Html.RenderPartial("UserRedAlertSimple", null);
+    });
+}).GetHtml()

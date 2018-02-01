@@ -1,0 +1,39 @@
+﻿
+@Html.DevExpress().PopupControl(settings =>
+{
+    settings.Name = "popup";
+    settings.CallbackRouteValues = new { Controller = "Home", Action = "PopupDetailAction" };
+    settings.AllowResize = false;
+    settings.ShowOnPageLoad = false;
+    settings.AllowDragging = true;
+    settings.CloseAction = CloseAction.CloseButton;
+    settings.CloseOnEscape = true;
+    settings.Modal = true;
+    settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+    settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
+    settings.Styles.Content.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+    settings.HeaderText = "";
+    settings.Styles.Header.BackgroundImage.ImageUrl = null;
+    settings.Styles.Header.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+    settings.ClientSideEvents.BeginCallback = "OnPopupBeginCallback";
+    settings.SetHeaderContentTemplateContent(content =>
+    {
+        ViewContext.Writer.Write("<div style='float: right; position: absolute; right: -45px;'>");
+        Html.DevExpress().Image(image =>
+        {
+            image.Name = "Closebut";
+            image.ImageUrl = "~/Content/Images/CloseButtonCross.png";
+            image.Width = 40;
+            image.Height = 40;
+            image.Properties.EnableClientSideAPI = true;
+            image.Properties.ClientSideEvents.Click = "function(s,e) {popup.Hide();}";
+        }).Render();
+        ViewContext.Writer.Write("</div>");
+    });
+    settings.SetContent(() =>
+    {
+        ViewContext.Writer.Write("<div style='margin-top:-10px;'");
+        Html.RenderAction("tabControlDetail","Home" );
+        ViewContext.Writer.Write("</div>");
+    });
+}).GetHtml()

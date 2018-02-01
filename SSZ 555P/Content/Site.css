@@ -1,0 +1,1958 @@
+﻿html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.headerPane 
+{
+    background-color: #EDEDED;
+    background-position: left top;
+    background-repeat: no-repeat;
+    font-family: Tahoma;
+}
+
+table#TreeList_D.dxtlDataTable {
+background-color:#FFF !important;
+}
+
+.headerPane .headerTop
+{
+    height: 150px;
+}
+.templateTitle 
+{
+    float:left;
+    margin-left: 15px;
+    margin-top: 11px;
+}
+.templateTitle a 
+{
+    text-decoration: none;
+    font-size: x-large;
+    color: black;
+}
+.loginControl 
+{
+    color: #FFF !important;
+    position:absolute;
+    top: 17px;
+    right: 70px;
+    font-size: 12px;
+}
+.loginControl a 
+{
+    color: #FFF !important;
+    text-decoration: none;
+    border-bottom: dashed 1px white !important;
+    display: inline-block;
+}
+.headerMenu 
+{
+    margin-top: 11px;
+}
+
+#GridViewTotalList {
+    margin-top:10px !important;
+}
+
+ #SearchTab1 {
+    margin: 10px 20px;
+    float:left;
+    
+        background-repeat: no-repeat;
+        background-image:url(Images/buttom/searsh81.gif);
+    background-position: 7px;
+    padding-left: 40px;
+}
+
+ .btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+ .btn {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-left: 15px;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+ .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn.active:focus, .btn.active.focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+.ParrentNode {
+ background-color:#c9e6fc;
+ border-bottom:1px solid #d1cece;
+}
+
+.dxtlSelectedNode_DevEx .ParrentNode  {
+    background-color:#024C97 !important;
+}
+
+ .dxichSys {
+margin:0px 5px !important;
+vertical-align:unset !important;
+
+}
+
+th.dxtlHeader_DevEx .dxtl__B3 .dxtl__IM {
+  border-right:none !important;
+}
+
+.dxtlSelectionCell_DevEx .dxtl__B3 .dxtl__IM span {
+   margin:auto;
+}
+
+
+
+.btn:focus, .btn:hover {
+  text-decoration: none;
+  border:1px;
+}
+
+.btn.focus {
+  text-decoration: none;
+}
+
+.btn:active, .btn.active {
+  background-image: none;
+  outline: 0;
+}
+
+.btn.disabled, .btn:disabled {
+  cursor: not-allowed;
+  opacity: .65;
+}
+
+a.btn.disabled,
+fieldset[disabled] a.btn {
+  pointer-events: none;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #024C97;
+  border-color: #ffffff;
+  text-decoration:none;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #025aa5;
+  border-color: #cac5c5;
+}
+
+.btn-primary:focus, .btn-primary.focus {
+  color: #fff;
+  background-color: #025aa5;
+  border-color: #01549b;
+  
+}
+
+.btn-primary:active, .btn-primary.active,
+.open > .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #025aa5;
+  background-image: none;
+  border-color: #01549b;
+}
+
+.btn-primary:active:hover, .btn-primary:active:focus, .btn-primary:active.focus, .btn-primary.active:hover, .btn-primary.active:focus, .btn-primary.active.focus,
+.open > .btn-primary.dropdown-toggle:hover,
+.open > .btn-primary.dropdown-toggle:focus,
+.open > .btn-primary.dropdown-toggle.focus {
+  color: #fff;
+  background-color: #014682;
+  border-color: #01315a;
+}
+
+.btn-primary.disabled:focus, .btn-primary.disabled.focus, .btn-primary:disabled:focus, .btn-primary:disabled.focus {
+  background-color: #0275d8;
+  border-color: #0275d8;
+}
+
+.btn-primary.disabled:hover, .btn-primary:disabled:hover {
+  background-color: #0275d8;
+  border-color: #0275d8;
+}
+
+
+
+#SearchTab1_I, dxic {
+font-size:14px;
+}
+
+#DateEdit  {
+    margin: 10px 20px;
+    float:left;
+    font-size:14px;
+}
+
+
+/* Footer */
+.footerPane 
+{
+    background-color: #EDEDED;
+    height:100%;
+}
+.footerMenu {
+    float: right;
+    padding-top: 7px;
+}
+.copyright 
+{
+    float: left;
+    margin-left: 15px;
+    margin-top: 100px;
+}
+
+.content 
+{
+    padding: 5px;
+}
+
+
+/* Account */
+.accountHeader h2 
+{
+    margin: 10px 0 7px 0;
+    font-size: 16px;
+}
+.accountHeader p 
+{
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+.accountHeader 
+{
+    margin-bottom: 20px;
+}
+.form-field
+{
+    margin-bottom: 8px;
+}
+
+
+/* iOS */
+.dxsplVSeparator_iOS,
+.dxsplHSeparator_iOS
+{
+    border-width: 0px !important;
+}
+.dxsplPane_iOS.leftPane,
+.dxsplPane_iOS.rightPane,
+.dxsplPane_iOS.contentPane
+{
+    border-width: 1px !important;
+}
+.dxsplControl_iOS .templateTitle
+{
+    margin-top: 3px;    
+}
+.dxsplControl_iOS .templateTitle a
+{
+    color: #303030;
+    font-size: 26px;
+    line-height: 1em;
+    font-weight: bold;
+}
+.dxsplControl_iOS .headerTop,
+.dxsplControl_iOS .content
+{
+    font-family: HelveticaNeue,Helvetica,Verdana,sans-serif;
+}
+.dxsplControl_iOS .loginControl
+{
+    margin-top: 4px;    
+}
+.dxsplControl_iOS .loginControl a
+{
+    color: #0160E7;
+    text-decoration: underline;
+    font-size: 20px;
+    font-weight: bold;
+}
+.dxsplControl_iOS .headerTop
+{
+    height: 33px;
+}
+.dxsplControl_iOS .headerMenu
+{
+    margin-top: 0px;   
+}
+.dxsplPane_iOS.mainContentPane
+{
+    border-width: 0px !important;
+    box-shadow: initial;
+    -webkit-box-shadow: initial;
+    -moz-box-shadow: initial;
+}
+.dxsplPane_iOS.footerPane
+{
+    border-width: 1px !important;
+}
+.dxsplControl_iOS .accountHeader p
+{
+    color: #303030;
+    font-size: 18px;
+}
+.dxsplControl_iOS .accountHeader h2
+{
+    color: #303030;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+
+/* Aqua */
+.dxsplControl_Aqua 
+{
+    font-family: Tahoma;
+}
+.dxsplControl_Aqua .headerPane,
+.dxsplControl_Aqua .footerPane,
+.dxsplControl_Aqua .footerMenu li
+{
+    background-color: #BFDBFF;
+}
+.dxsplControl_Aqua .headerPane
+{
+    background-image: url('images/AquaHeader.jpg');
+}
+.dxsplControl_Aqua .accountHeader h2
+{
+    color: #5689C5;
+}
+.dxsplControl_Aqua .loginControl a,
+.dxsplControl_Aqua .templateTitle a
+{
+    color: White;
+    border-color: White;
+}
+
+
+/* DevEx */
+.dxsplControl_DevEx 
+{
+    font-family: Verdana;
+    color: #201F35;
+}
+.dxsplControl_DevEx .headerPane,
+.dxsplControl_DevEx .footerPane,
+.dxsplControl_DevEx .footerMenu li
+{
+    background-color: #F2F3F4;
+}
+.dxsplControl_DevEx .templateTitle a,
+.dxsplControl_DevEx .loginControl,
+.dxsplControl_DevEx .loginControl a
+{
+    color: #4B4B57;
+}
+.dxsplControl_DevEx .loginControl a 
+{
+    border-bottom-color: #4B4B57;
+}
+.dxsplControl_DevEx .headerMenu 
+{
+    margin-top: 13px;
+}
+.dxsplControl_DevEx .accountHeader p
+{
+    font-size: 11px;
+}
+
+
+/* BlackGlass */
+.dxsplControl_BlackGlass 
+{
+    font-family: Tahoma;
+}
+.dxsplControl_BlackGlass .headerPane,
+.dxsplControl_BlackGlass .footerPane,
+.dxsplControl_BlackGlass .footerMenu li
+{
+    background-color: #2A2A2A;
+    color: white;
+}
+.dxsplControl_BlackGlass .headerPane
+{
+    background-image: url('images/BlackGlassHeader.jpg');
+}
+.dxsplControl_BlackGlass .leftPanel li[class$="dxnb-last"] ul
+{
+    border-bottom: 1px solid black;
+}
+.dxsplControl_BlackGlass .accountHeader p
+{
+    color: #585858;
+}
+.dxsplControl_BlackGlass .loginControl a,
+.dxsplControl_BlackGlass .templateTitle a
+{
+    color: White;
+    border-color: White;
+}
+
+
+/* Glass */
+.dxsplControl_Glass 
+{
+    font-family: Tahoma;
+}
+.dxsplControl_Glass .headerPane,
+.dxsplControl_Glass .footerPane,
+.dxsplControl_Glass .footerMenu li
+{
+    background-color: #CFE0E7;
+}
+.dxsplControl_Glass .headerPane
+{
+    background-image: url('images/GlassHeader.jpg');
+}
+.dxsplControl_Glass .footerMenu *
+{
+    background-image: none !important;
+}
+.dxsplControl_Glass .templateTitle a,
+.dxsplControl_Glass .loginControl,
+.dxsplControl_Glass .loginControl a
+{
+    color: #4B4B57;
+}
+.dxsplControl_Glass .loginControl a 
+{
+    border-bottom-color: #4B4B57;
+}
+.dxsplControl_Glass .accountHeader h2
+{
+    color: #387FA4;
+}
+.dxsplControl_Glass .accountHeader p
+{
+    color: #575757;
+}
+
+
+
+/* Office2003Blue */
+.dxsplControl_Office2003Blue 
+{
+    font-family: Tahoma;
+}
+.dxsplControl_Office2003Blue .headerPane,
+.dxsplControl_Office2003Blue .footerPane,
+.dxsplControl_Office2003Blue .footerMenu li
+{
+    background-color: #BCD4F6;
+}
+.dxsplControl_Office2003Blue .footerMenu div
+{
+    background: transparent none;
+}
+.dxsplControl_Office2003Blue .leftPanel > ul
+{
+    background: transparent none;
+}
+.dxsplControl_Office2003Blue .templateTitle a,
+.dxsplControl_Office2003Blue .loginControl,
+.dxsplControl_Office2003Blue .loginControl a
+{
+    color: #4B4B57;
+}
+.dxsplControl_Office2003Blue .loginControl a 
+{
+    border-bottom-color: #4B4B57;
+}
+.dxsplControl_Office2003Blue .accountHeader p
+{
+    color: #424242;
+}
+.dxsplControl_Office2003Blue .headerMenu 
+{
+    margin-top: 5px;
+}
+
+
+/* Office2003Olive */
+.dxsplControl_Office2003Olive 
+{
+    font-family: Tahoma;
+}
+.dxsplControl_Office2003Olive .headerPane,
+.dxsplControl_Office2003Olive .footerPane,
+.dxsplControl_Office2003Olive .footerMenu li
+{
+    background-color: #D6DCBB;
+}
+.dxsplControl_Office2003Olive .footerMenu div
+{
+    background: transparent none;
+}
+.dxsplControl_Office2003Olive .leftPanel > ul
+{
+    background: transparent none;
+}
+.dxsplControl_Office2003Olive .templateTitle a,
+.dxsplControl_Office2003Olive .loginControl,
+.dxsplControl_Office2003Olive .loginControl a
+{
+    color: #4B4B57;
+}
+.dxsplControl_Office2003Olive .loginControl a 
+{
+    border-bottom-color: #4B4B57;
+}
+.dxsplControl_Office2003Olive .accountHeader p
+{
+    color: #424242;
+}
+.dxsplControl_Office2003Olive .headerMenu 
+{
+    margin-top: 5px;
+}
+
+/* Office2003Silver */
+.dxsplControl_Office2003Silver 
+{
+    font-family: Tahoma;
+}
+.dxsplControl_Office2003Silver .headerPane,
+.dxsplControl_Office2003Silver .footerPane,
+.dxsplControl_Office2003Silver .footerMenu li
+{
+    background-color: #D0D0DE;
+}
+.dxsplControl_Office2003Silver .footerMenu div
+{
+    background: transparent none;
+}
+.dxsplControl_Office2003Silver .leftPanel > ul
+{
+    background: transparent none;
+}
+.dxsplControl_Office2003Silver .templateTitle a,
+.dxsplControl_Office2003Silver .loginControl,
+.dxsplControl_Office2003Silver .loginControl a
+{
+    color: #4B4B57;
+}
+.dxsplControl_Office2003Silver .loginControl a
+{
+    border-bottom-color: #4B4B57;
+}
+.dxsplControl_Office2003Silver .accountHeader p
+{
+    color: #424242;
+}
+.dxsplControl_Office2003Silver .headerMenu 
+{
+    margin-top: 5px;
+}
+
+
+/* Office2010Black */
+.dxsplControl_Office2010Black 
+{
+    font-family: Verdana;
+}
+.dxsplControl_Office2010Black .headerPane,
+.dxsplControl_Office2010Black .footerPane,
+.dxsplControl_Office2010Black .footerMenu li
+{
+    background-color: #393939;
+    color: white;
+}
+.dxsplControl_Office2010Black .footerMenu a
+{
+    color: white !important;
+}
+.dxsplControl_Office2010Black .accountHeader h2
+{
+    color: #3C3C3C;
+}
+.dxsplControl_Office2010Black .accountHeader p
+{
+    font-size: 11px;
+}
+.dxsplControl_Office2010Black .headerMenu 
+{
+    margin-top: 13px;
+}
+.dxsplControl_Office2010Black .loginControl a,
+.dxsplControl_Office2010Black .templateTitle a
+{
+    color: White;
+    border-color: White;
+}
+
+
+/* Office2010Blue */
+.dxsplControl_Office2010Blue 
+{
+    font-family: Verdana;
+}
+.dxsplControl_Office2010Blue .headerPane,
+.dxsplControl_Office2010Blue .footerPane,
+.dxsplControl_Office2010Blue .footerMenu li
+{
+    background-color: #D3E4F6;
+}
+.dxsplControl_Office2010Blue .templateTitle a,
+.dxsplControl_Office2010Blue .loginControl,
+.dxsplControl_Office2010Blue .loginControl a
+{
+    color: Black;
+}
+.dxsplControl_Office2010Blue .loginControl a 
+{
+    border-bottom-color: Black;
+}
+.dxsplControl_Office2010Blue .accountHeader h2
+{
+    color: #498BC2;
+}
+.dxsplControl_Office2010Blue .accountHeader p
+{
+    font-size: 11px;
+}
+.dxsplControl_Office2010Blue .headerMenu 
+{
+    margin-top: 13px;
+}
+
+
+/* Office2010Silver */
+.dxsplControl_Office2010Silver 
+{
+    font-family: Verdana;
+}
+.dxsplControl_Office2010Silver .headerPane,
+.dxsplControl_Office2010Silver .footerPane,
+.dxsplControl_Office2010Silver .footerMenu li
+{
+    background-color: #A9ACB4;
+    color: white;
+}
+.dxsplControl_Office2010Silver .accountHeader h2
+{
+    color: #3B3B3B;
+}
+.dxsplControl_Office2010Silver .accountHeader p
+{
+    font-size: 11px;
+}
+.dxsplControl_Office2010Silver .headerMenu 
+{
+    margin-top: 13px;
+}
+.dxsplControl_Office2010Silver .loginControl a,
+.dxsplControl_Office2010Silver .templateTitle a
+{
+    color: White;
+    border-color: White;
+}
+
+
+
+/* PlasticBlue */
+.dxsplControl_PlasticBlue 
+{
+    font-family: Tahoma;
+}
+.dxsplControl_PlasticBlue .headerPane,
+.dxsplControl_PlasticBlue .footerPane,
+.dxsplControl_PlasticBlue .footerMenu li
+{
+    background-color :#3C4F8F;
+    color: white;
+}
+.dxsplControl_PlasticBlue .headerPane
+{
+    background-image: url('images/PlasticBlueHeader.jpg');
+}
+.dxsplControl_PlasticBlue .accountHeader h2
+{
+    color: #5A83D0;
+}
+.dxsplControl_PlasticBlue .accountHeader p
+{
+    color: #575757;
+}
+.dxsplControl_PlasticBlue .headerMenu 
+{
+    margin-top: 12px;
+}
+.dxsplControl_PlasticBlue .loginControl a,
+.dxsplControl_PlasticBlue .templateTitle a
+{
+    color: White;
+    border-color: White;
+}
+
+
+/* RedWine */
+.dxsplControl_RedWine 
+{
+    font-family: Tahoma;
+}
+.dxsplControl_RedWine .headerPane,
+.dxsplControl_RedWine .footerPane,
+.dxsplControl_RedWine .footerMenu li
+{
+    background-color: #78002B;
+    color: white;
+}
+.dxsplControl_RedWine .headerPane
+{
+    background-image: url('images/RedWineHeader.jpg');
+    background-position: top right;
+}
+.dxsplControl_RedWine .footerMenu div 
+{
+    background: transparent none;
+}
+.dxsplControl_RedWine .accountHeader h2
+{
+    color: #8A0A37;
+}
+.dxsplControl_RedWine .headerMenu 
+{
+    margin-top: 9px;
+}
+.dxsplControl_RedWine .loginControl a,
+.dxsplControl_RedWine .templateTitle a
+{
+    color: White;
+    border-color: White;
+}
+
+
+/* SoftOrange */
+.dxsplControl_SoftOrange 
+{
+    font-family: Tahoma;
+}
+.dxsplControl_SoftOrange .headerPane,
+.dxsplControl_SoftOrange .footerPane,
+.dxsplControl_SoftOrange .footerMenu li
+{
+    background-color: #F9F9F9 !important;
+    background-image: none !important;
+}
+.dxsplControl_SoftOrange .templateTitle a,
+.dxsplControl_SoftOrange .loginControl,
+.dxsplControl_SoftOrange .loginControl a
+{
+    color: Black;
+}
+.dxsplControl_SoftOrange .loginControl a 
+{
+    border-bottom-color: Black;
+}
+.dxsplControl_SoftOrange .accountHeader h2
+{
+    color: Black;
+}
+.dxsplControl_SoftOrange .accountHeader p
+{
+    color: #707070;
+}
+.dxsplControl_SoftOrange .headerMenu 
+{
+    margin-top: 8px;
+}
+
+
+/* Youthful */
+.dxsplControl_Youthful 
+{
+    font-family: Tahoma;
+}
+.dxsplControl_Youthful .headerPane,
+.dxsplControl_Youthful .footerPane,
+.dxsplControl_Youthful .footerMenu li
+{
+    background-color: #8AA150;
+    color: white !important;
+}
+.dxsplControl_Youthful .accountHeader h2
+{
+    color: #80A70E;
+}
+.dxsplControl_Youthful .headerMenu 
+{
+    margin-top: 1px;
+}
+.dxsplControl_Youthful .loginControl a,
+.dxsplControl_Youthful .templateTitle a
+{
+    color: White;
+    border-color: White;
+}
+
+/* Metropolis */
+.dxsplControl_Metropolis 
+{
+    font-family: Segoe UI;
+}
+.dxsplControl_Metropolis .headerPane,
+.dxsplControl_Metropolis .footerMenu li
+{
+    background-color: White;
+    color: Black;
+}
+.dxsplControl_Metropolis .accountHeader h2
+{
+    color: #3B3B3B;
+}
+.dxsplControl_Metropolis .accountHeader p
+{
+    font-size: 11px;
+}
+.dxsplControl_Metropolis .headerMenu 
+{
+    margin-top: 13px;
+}
+.dxsplControl_Metropolis .loginControl a,
+.dxsplControl_Metropolis .templateTitle a
+{
+    color: Black;
+    border-color: Black;
+}
+.dxsplControl_Metropolis .templateTitle a 
+{
+	font-size: 28px;
+}
+.dxsplControl_Metropolis .dxsplVSeparator_Metropolis 
+{
+    border-bottom: 0!important;
+}
+
+/* MetropolisBlue */
+.dxsplControl_MetropolisBlue
+{
+    font-family: Segoe UI;
+}
+.dxsplControl_MetropolisBlue .headerPane,
+.dxsplControl_MetropolisBlue .footerMenu li
+{
+    background-color: White;
+    color: Black;
+}
+.dxsplControl_MetropolisBlue .accountHeader h2
+{
+    color: #3B3B3B;
+}
+.dxsplControl_MetropolisBlue .accountHeader p
+{
+    font-size: 11px;
+}
+.dxsplControl_MetropolisBlue .headerMenu 
+{
+    margin-top: 13px;
+}
+.dxsplControl_MetropolisBlue .loginControl a,
+.dxsplControl_MetropolisBlue .templateTitle a
+{
+    color: Black;
+    border-color: Black;
+}
+.dxsplControl_MetropolisBlue .templateTitle a 
+{
+	font-size: 28px;
+}
+.dxsplControl_MetropolisBlue .dxsplVSeparator_MetropolisBlue 
+{
+    border-bottom: 0!important;
+}
+
+/* Moderno */
+.dxsplControl_Moderno 
+{
+    font-family: Segoe UI;
+}
+.dxsplControl_Moderno .headerPane,
+.dxsplControl_Moderno .footerMenu li
+{
+    background-color: White;
+    color: Black;
+}
+.dxsplControl_Moderno .accountHeader h2
+{
+    color: #3B3B3B;
+}
+.dxsplControl_Moderno .accountHeader p
+{
+    font-size: 11px;
+}
+.dxsplControl_Moderno .headerMenu 
+{
+    margin-top: 13px;
+}
+.dxsplControl_Moderno .loginControl a,
+.dxsplControl_Moderno .templateTitle a
+{
+    color: #0072c6;
+    border-color: #0072c6;
+}
+.dxsplControl_Moderno .templateTitle a 
+{
+	font-size: 28px;
+}
+.dxsplControl_Moderno .dxsplVSeparator_Moderno 
+{
+	border-bottom: 0!important;
+    border-left: 1px solid #d1d1d1;
+    border-right: 1px solid #d1d1d1;
+}
+.dxsplControl_Moderno .footerPane 
+{
+	background: #EDEDED;
+}
+
+/* Mulberry */
+.dxsplControl_Mulberry
+{
+    font-family: Segoe UI;
+}
+.dxsplControl_Mulberry .footerMenu li
+{
+    background-color: White;
+    color: Black;
+}
+.dxsplControl_Mulberry .accountHeader h2
+{
+    color: #3B3B3B;
+}
+.dxsplControl_Mulberry .accountHeader p
+{
+    font-size: 11px;
+}
+.dxsplControl_Mulberry .headerMenu 
+{
+    margin-top: 10px;
+}
+.dxsplControl_Mulberry .loginControl a,
+.dxsplControl_Mulberry .templateTitle a
+{
+    color: #BF4E6A;
+    border-color: #BF4E6A;
+}
+.dxsplControl_Mulberry .templateTitle a 
+{
+    font-size: 28px;
+}
+.dxsplControl_Mulberry .dxsplVSeparator_Mulberry
+{
+    border-width: 0px !important;
+}
+.dxsplControl_Mulberry .headerPane,
+.dxsplControl_Mulberry .footerPane
+{
+    background: #F1F2F5;
+}
+
+.fiol {
+ background-color:#853B65;
+ color:white;
+ font-size:20px;
+ text-align:center;
+}
+
+.cellCenter {
+ padding:0px 5px;
+ border-bottom:1px solid #DDD;
+ border-right:1px solid #DDD;
+}
+
+.RedOST {
+    background-color:#eb0000;
+  
+    
+}
+
+.OrangeP {
+     background-color:#e19104;
+   
+}
+
+.GreenS {
+     background-color:#019501;
+  
+}
+
+
+#pause {
+    margin:0 auto;
+}
+
+ #rect1 {
+     position:relative;
+    width:6px;
+    height:17px;
+    background-color:#e19104;
+    border:1px solid #ffffff;
+    left:26px;
+    top:0px;
+    float:left;
+    }
+
+  #rect2 {
+    width:6px;
+    height:17px;
+    background-color:#e19104;
+    border:1px solid #ffffff;
+    position:relative;
+    left:36px;
+    }
+
+#square {
+    width:17px;
+    height:17px;
+    background-color:#eb0000;
+    margin:0 auto;
+    border:1px solid #ffffff;
+}
+
+#triangle-right {
+    width:0px;
+    height:0px;
+   border-top:10px solid transparent;
+   border-left:20px solid #ffffff;
+   border-bottom: 10px solid transparent;
+   margin:0 auto;
+}
+#triangle-right1 {
+    width:0px;
+    height:0px;
+   border-top:8px solid transparent;
+   border-left:16px solid #019501;
+   border-bottom: 8px solid transparent;
+   margin:-8px 0px 0px -19px ;
+   position:relative;
+}
+
+
+
+/*.headerTab {
+    
+    background-color:#0051a3;
+    padding: 4px 10px;
+  
+    color:white;
+    text-align:center;
+   
+}*/
+
+.dxgvCSD {
+    background-color:#333;
+}
+
+/*Фон*/
+.dxsplLCC {
+    background-color:#444444;
+    color:#ffffff;
+}
+
+dxsplControl_DevEx {
+    margin:0 auto;
+}
+
+.dxgvTable_DevEx .dxgv {
+   /* border: 1px solid #979797!important;*/
+    padding:15px 10px;
+    font-size:14px;
+    font-weight:500;
+    color:#333;
+}
+
+
+.RowST {
+      padding:10px 10px;
+    font-size:14px;
+    font-weight:500;
+    color:#333;
+}
+}
+
+.FocusTR {
+    background-color:#0051a3;
+    color:White;
+    height:30px;
+    width:700px;
+}
+
+
+.dxgvEditFormDisplayRow_DevEx td.dxgv, .dxgvDetailCell_DevEx td.dxgv, .dxgvDataRow_DevEx td.dxgv, .dxgvDetailRow_DevEx.dxgvADR td.dxgvAIC {
+    padding:10px 10px;
+}
+
+
+
+.dxgvFocusedRow_DevEx {
+            background: red;
+            
+        }
+
+ .dxmLite_DevEx .dxm-main {
+            background: red;
+            
+        }
+
+.dxgvFocusedRow_DevEx  td.dxgv {
+      color:White;
+}
+
+.dxgvDetailRow_DevEx td.dxgvDetailCell_DevEx {
+    background-color:#111;
+    color:#ffffff;
+}
+
+  .dxgvDetailRow_DevEx td.dxgvIndentCell
+        {
+            background-color: #111111 !important;
+        }
+
+a.buttomAct {
+    height:40px;
+    color:#ffffff;
+     background-color:#0051a3;
+     padding: 10px 15px;
+     font-size:14px;
+     margin: 0 15px 10px 0px;
+      text-decoration:none;
+}
+
+dxgvInlineEditRow,
+.dxgvDataRow
+{
+     height:40px;
+}
+
+ .headerTab {
+     cursor: pointer;
+     white-space: nowrap;
+     text-align:center;
+     padding: 4px 6px 5px 6px;
+      color:#ffffff !important;
+     overflow: hidden;
+     -moz-user-select: none;
+     height:30px;
+     font-size:14px;
+     border:1px solid #111;
+}
+
+  td .dxgvHeader_DevEx .headerTab {
+        width:70px !important;
+    }
+
+ .dxpc-headerContent
+ {
+    background-color: #1a1a1a !important;
+}
+
+ .dxpcLite_DevEx .dxpc-header, .dxdpLite_DevEx .dxpc-header
+  {
+    background:  #1a1a1a !important;
+    border-bottom:none;
+}
+
+.dxpc-headerContent {
+    float:right;
+}
+
+.dxpcLite_DevEx .dxpc-closeBtn {
+    display:none;
+}
+
+.dxpcModalBackLite_DevEx {
+    background-color:#000000 !important;
+    opacity:0,8 !important;
+}
+
+.dxpcLite_DevEx .dxpc-mainDiv {
+    border: 1px solid #6d6d6d;
+}
+
+.dxtcLite_Metropolis > .dxtc-stripContainer .dxtc-tab {
+    background:#1a1a1a !important;
+
+}
+
+.dxtc-content {
+    border-color:#1a1a1a !important;
+    
+   
+}
+
+
+
+
+
+ /* #butSt:hover  {
+  width:68px;
+  height:68px;
+  background-repeat:no-repeat;
+  background-image: url(Images/buttom/startA.png);
+}*/
+
+   #butStop {
+  width:68px;
+  height:68px;
+  background-repeat:no-repeat;
+  background-image: url(Images/buttom/stop.png);
+}
+
+
+
+ /* #butStop:hover  {
+  width:68px;
+  height:68px;
+  background-repeat:no-repeat;
+  background-image: url(Images/buttom/stopA.png);
+}*/
+
+   #butClose {
+  width:68px;
+  height:68px;
+  background-repeat:no-repeat;
+  background-image: url(Images/buttom/close.png);
+}
+
+
+
+ /*#butClose:hover  {
+  width:68px;
+  height:68px;
+  background-repeat:no-repeat;
+  background-image: url(Images/buttom/closeA.png);
+}*/
+
+
+   #butmes {
+  width:68px;
+  height:68px;
+  background-repeat:no-repeat;
+  background-image: url(Images/buttom/message.png);
+}
+
+
+  #butmes:hover  {
+  box-shadow : 0 0 5px 2px #FFFFFF;
+}
+
+     #butdoc {
+  width:68px;
+  height:68px;
+  background-repeat:no-repeat;
+  background-image: url(Images/buttom/document.png);
+}
+
+
+  #butdoc:hover  {
+  box-shadow : 0 0 5px 2px #FFFFFF;
+}
+
+     #butP {
+  width:68px;
+  height:68px;
+  background-repeat:no-repeat;
+  background-image: url(Images/buttom/pause.png);
+}
+
+
+
+/* #butP:hover  {
+  box-shadow : 0 0 5px 2px #e19104;
+}*/
+
+    #butgraf {
+  width:68px;
+  height:68px;
+  background-repeat:no-repeat;
+  background-image: url(Images/buttom/graf.png);
+}
+
+  #butgraf:hover  {
+box-shadow : 0 0 5px 2px #FFFFFF;
+}
+
+    #butj {
+  width:68px;
+  height:68px;
+  background-repeat:no-repeat;
+  background-image: url(Images/buttom/message.png);
+}
+
+  #butj:hover  {
+ box-shadow : 0 0 5px 2px #FFFFFF;
+}
+
+   #butL {
+  width:68px;
+  height:68px;
+  background-repeat:no-repeat;
+  background-image: url(Images/buttom/graf.png);
+}
+
+  #butL:hover  {
+ box-shadow : 0 0 5px 2px #FFFFFF;
+}
+
+
+ #tooltip {
+  z-index: 9999;
+  position: absolute;
+  display: none;
+  top:0px;
+  left:0px;
+  background-color: #000;
+  padding: 5px 10px 5px 10px;
+ /* color: white;*/
+   opacity:0.5;
+   -moz-opacity:0.5;
+  border-radius: 5px;
+        }
+
+    #butref {
+  width:68px;
+  height:68px;
+  background-repeat:no-repeat;
+  background-image: url(Images/buttom/refresh.png);
+}
+
+  #butref:hover  {
+  box-shadow : 0 0 5px 2px #3AAACF;
+}
+
+     #butexit {
+  width:68px;
+  height:68px;
+  background-repeat:no-repeat;
+  background-image: url(Images/buttom/exit.png);
+}
+
+  #butexit:hover  {
+  box-shadow : 0 0 5px 2px #FFFFFF;
+}
+
+  
+ /*background-image: url(Images/right.png);*/
+
+ /*****************Скрол*/
+
+ .jspContainer
+{
+	overflow: hidden;
+	position: relative;
+}
+
+.jspPane
+{
+	position: absolute;
+}
+
+.jspVerticalBar
+{
+	position: absolute;
+	top: -5px;
+	right: 0;
+	width: 30px;
+	height: 100%;
+	padding-bottom:28px;
+	background: #333;
+}
+
+.jspHorizontalBar
+{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 28px;
+	background: #333;
+
+}
+
+.jspVerticalBar *,
+.jspHorizontalBar *
+{
+	margin: 0;
+	padding: 0;
+}
+
+.jspCap
+{
+	display: block;
+}
+
+.jspHorizontalBar .jspCap
+{
+	float: left;
+}
+
+.jspTrack
+{
+	background: #333;
+	position: relative;
+	
+}
+
+
+
+
+.jspDrag
+{
+	border:2px solid #fff;
+	background-color:#333;
+	position: relative;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+}
+
+
+
+
+
+
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag
+{
+	float: left;
+	height: 100%;
+	
+}
+.jspHorizontalBar  .jspDrag
+{
+top: 0px;
+height: 24px;
+background-image: url(Images/lineh.png);
+   background-repeat:no-repeat;
+	background-position:   50% 50%;
+	
+	/*background-repeat: repeat-x;*/
+	
+}
+
+.jspVerticalBar  .jspDrag
+{
+
+background-image: url(Images/lineV.png);
+   background-repeat:no-repeat;
+	background-position:   50% 50%;
+	
+	/*background-repeat: repeat-x;*/
+	
+}
+
+
+.jspHorizontalBar  .jspTrack
+{
+top:0px;
+height: 28px;
+background-image: url(Images/lineh.png);
+	 background-position:center;
+}
+
+
+.jspVerticalBar .jspTrack
+{
+
+background-image: url(Images/linev.png);
+	 background-position:center;
+}
+
+
+
+.jspArrow
+{
+	border:2px solid #fff;
+	background-color:#333;
+	text-indent: -20000px;
+	display: block;
+	cursor: pointer;
+}
+
+.jspArrow.jspDisabled
+{
+	cursor: default;
+	background: #333;
+}
+
+.jspVerticalBar .jspArrow
+{
+	height: 28px;
+	
+}
+
+.jspHorizontalBar .jspArrow
+{
+	width: 26px;
+	float: left;
+	height: 24px;
+}
+
+.jspVerticalBar .jspArrow:focus
+{
+	outline: none;
+}
+
+.jspCorner
+{
+	background: #333;
+	float: left;
+	height: 30px;
+	width:30px;
+	
+}
+.jspArrowUp {
+	background-color:#333;
+	 background-image: url(Images/up.png);
+	 background-repeat:no-repeat;
+	 background-position:center;
+}
+
+.jspArrowUp:focus{
+	background-color:#555;
+	 background-image: url(Images/up.png);
+	 background-repeat:no-repeat;
+	 background-position:center;
+}
+
+.jspArrowDown {background-color:#333;
+	 background-image: url(Images/down.png);
+	 background-repeat:no-repeat;
+	 background-position:center;}
+.jspArrowLeft {background-color:#333;
+	 background-image: url(Images/left.png);
+	 background-repeat:no-repeat;
+	 background-position:center;}
+	 
+.jspArrowRight{ 
+     background-color:#333;
+	 background-image: url(Images/right.png);
+	 background-repeat:no-repeat;
+	 background-position:center;}
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
+* html .jspCorner
+{
+	margin: 0 -3px 0 0;
+}
+
+
+.jspVerticalBar .jspCap
+{
+	height: 5px;
+    padding-right:10px;
+}
+
+.jspHorizontalBar .jspCap
+{
+	width: 0px;
+	height: 100%;
+}
+/***************************************************/
+
+ .dxsplPane_DevEx {
+    border:none !important;
+}
+
+.dxgvCSD {
+   scrollbar-arrow-color:#333333;
+   scrollbar-track-color:#ffffff;
+   scrollbar-face-color:#333333;
+   scrollbar-shadow-color:#CCCCCC;
+  
+}
+
+#GridView  .dxgvHSDC {
+    background-color:#024C97;
+}
+
+#GridView  .dxgvControl_DevEx {border:none;}
+
+#GridView  .dxgvCSD::-webkit-scrollbar { width: 28px; height: 28px; }
+
+#GridView  dxgvCSD::-webkit-scrollbar:vertical {
+    margin-left:30px;
+    padding-left:30px;
+}
+
+#GridView .dxgvCSD::-webkit-scrollbar-button {  background-color: #1a1a1a;  width: 28px; height: 28px; border:1px solid #ffffff; }
+
+#GridView  .dxgvCSD::-webkit-scrollbar-button:vertical:start { background-image: url(Images/up.png);
+	 background-repeat:no-repeat;
+	 background-position:center;  }
+
+#GridView  .dxgvCSD::-webkit-scrollbar-button:vertical:end { background-image: url(Images/down.png);
+	 background-repeat:no-repeat;
+	 background-position:center;  }
+
+#GridView .dxgvCSD::-webkit-scrollbar-button:horizontal:start { background-image: url(Images/left.png);
+	 background-repeat:no-repeat;
+	 background-position:center;  }
+
+#GridView .dxgvCSD::-webkit-scrollbar-button:horizontal:end { background-image: url(Images/right.png);
+	 background-repeat:no-repeat;
+	 background-position:center;  }
+
+#GridView .dxgvCSD::-webkit-scrollbar-track {  background-color:  #1a1a1a;  }
+
+#GridView .dxgvCSD::-webkit-scrollbar-track-piece:horizontal {background-image: url(Images/lineh.png);
+	 background-position:center;}
+#GridView .dxgvCSD::-webkit-scrollbar-track-piece:vertical {background-image: url(Images/linev.png);
+	 background-position:center;}
+
+#GridView .dxgvCSD::-webkit-scrollbar-thumb:vertical { height: 50px; border:1px solid #ffffff;  background-color: #1a1a1a; background-image: url(Images/linev.png);  background-repeat:no-repeat;
+	background-position:   50% 50%;max-height:300px !important;}
+#GridView .dxgvCSD::-webkit-scrollbar-thumb:horizontal { height: 50px; border:1px solid #ffffff;  background-color: #1a1a1a; background-image: url(Images/lineh.png);  background-repeat:no-repeat;
+	background-position:   50% 50%;}
+#GridView .dxgvCSD::-webkit-scrollbar-corner { background-color: #1a1a1a;border:none;}
+#GridView .dxgvCSD::-webkit-resizer {  background-color: #1a1a1a;border:none; }
+
+.dxsplControl_DevEx .dxsplLCC { padding:8px 8px 55px 10px;}
+
+#GridView {
+    position:relative;
+    left:0px;
+    
+}
+
+#lineVertu {
+    position:relative;
+    right:28px;
+    
+    width:15px;
+    height:1px;
+    float:right;
+    background-color:#1a1a1a;
+     display:none;
+    
+}
+
+#qVertu {
+    position:relative;
+    right:0px;
+   
+    width:0px;
+    height:40px;
+    float:right;
+    background-color:#1a1a1a;
+    z-index:11298;
+    display:none;
+}
+
+#lineHor {
+    height:15px;
+    width:1px;
+    position:relative;
+    z-index:11298;
+    background-color:#1a1a1a;
+    top:-93px; 
+    display:none;
+}
+
+.Waring {
+    background-color:darkorange;
+     height: 70px; 
+     padding: 10px;
+}
+
+.error-windows {
+    background-color: red; color: white; height: 85px; width: 600px; padding: 10px; font-weight:600;
+}
+
+
+
+.HeaderSearch logoImg {
+    float:left;
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+.HeaderSearch .txtser  {
+    
+    padding:13px 10px;
+    background-color:#1a1a1a;
+    width:460px;
+    position:absolute;
+    top:0px;
+    left:65px;
+    margin-bottom:20px;
+}
+
+.HeaderSearch .txtser #SearchTab {
+    font-size:18px;
+   
+}
+
+.HeaderSearch .txtser img {
+   position:absolute ;
+   top:12px; 
+   right:10px;
+   float:right;
+}
+
+.taboper {
+    width:100%;
+}
+.taboper td {
+    border:1px solid #ffffff;
+    padding:5px 8px;
+    font-size:12px;
+}
+
+.taboper td:nth-child(2n+1) {
+color:#ffffff;
+background-color:#0051a3;
+}
+
+.taboper tr:nth-child(2n+1) td:nth-child(2n) {
+color:#1a1a1a;
+background-color:white;
+}
+
+.taboper tr:nth-child(2n) td:nth-child(2n) {
+color:#1a1a1a;
+background-color:#aaaaaa;
+}
+
+td.dxgvBatchEditModifiedCell_DevEx {
+  background: transparent!important;
+}
+
+.headerAct {
+    margin:30px 10px 10px 10px ;
+    width:100%;
+    height:85px;
+    background-color:#444444;
+}
+
+.headerAct .headerButtom {
+    height: 100%;
+    background-color: #1a1a1a;
+    display: inline-block;
+}
+
+
+.headerAct .headerButtomAct {
+    height:100%;
+    background-color:#1a1a1a;
+    display:inline-block;
+    margin-left:80px;
+}
+
+.headerAct .headerButtomClose {
+ height:100%;
+ background-color:#1a1a1a;
+ display:inline-block;
+ margin-right:150px;
+ float:right;
+}
+
+
+
+
+.headerAct .butpad {
+    padding:8px 10px 7px 10px;
+   display:inline-block;
+   width:68px;
+}
+ #butSt {
+  width:68px;
+  height:68px;
+  background-repeat:no-repeat;
+  background-image: url(Images/buttom/start.png);
+}
+
+  .HeaderSearch  #SearchTab_I {
+        width: 400px;
+        height:33px;
+    }
+#prt {
+    
+    width: 20px;
+	height: 20px;
+	background: #5E2F49;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+    text-align:center;
+    float:left;
+     margin-right:2px;
+}
+
+    #prt span {
+        color:#DADADA;
+        font-weight:bold;
+        font-size:12px;
+        position:relative;
+        top:2px;
+           }
+
+#prtM {
+    
+    width: 20px;
+	height: 20px;
+	background: #c15e16;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+    text-align:center;
+    float:left;
+     margin-right:2px;
+}
+
+    #prtM span {
+        color:#DADADA;
+        font-weight:bold;
+        font-size:12px;
+        position:relative;
+        top:-1px;
+        right:1px;
+           }
+
+
+    #prtR {
+    
+    width: 20px;
+	height: 20px;
+	background: #d89b0a;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+    text-align:center;
+    float:left;
+     margin-right:2px;
+}
+
+    #prtR span {
+        color:#222222;
+        font-weight:bold;
+        font-size:12px;
+        position:relative;
+        top:-1px;
+        right:1px;
+           }
+
+
+
+    #prtE {
+    
+    width: 20px;
+	height: 20px;
+	background: #8a1d17;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+    text-align:center;
+    float:left;
+     margin-right:2px;
+}
+
+    #prtE span {
+        color:#DADADA;
+        font-weight:bold;
+        font-size:12px;
+        position:relative;
+        top:-1px;
+        
+           }
+
+@media screen  and (max-width:1024px) {
+
+    .headerAct {
+         height:50px;
+    }
+
+        .headerAct .butpad {
+            padding:5px 10px 5px 10px;
+            width:40px;
+        }
+
+    #butSt, #butP, #butStop, #butClose, #butj, #butL , #butref, #butexit, #butdoc {
+        width:40px;
+        height:40px;
+        background-size: 40px 40px;
+    }
+
+ .headerAct   .headerButtomAct {
+    margin-left:20px;
+}
+
+.headerAct .headerButtomClose {
+ margin-right:50px;
+}
+
+.HeaderSearch #logoImg {
+    width:40px;
+    height:40px;
+}
+.HeaderSearch .txtser  {
+    
+    padding:7px 7px;
+    background-color:#1a1a1a;
+    width:260px;
+    position:absolute;
+    top:0px;
+    left:40px;
+    margin-bottom:20px;
+}
+
+.HeaderSearch .txtser #SearchTab {
+    font-size:18px;
+   
+}
+
+.HeaderSearch .txtser img {
+   position:absolute;
+   top:5px; 
+   right:10px;
+   width:30px;
+   height:30px;
+   float:right;
+}
+
+
+  .HeaderSearch  #SearchTab_I {
+        width: 200px;
+        height:19px;
+    }
+
+  .headerPane .headerTop
+{
+    height: 120px;
+}
+
+  .headerAct {
+    margin:15px 10px 10px 10px ;
+    width:100%;
+    height:54px;
+    background-color:#444444;
+}
+
+}

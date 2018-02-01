@@ -1,0 +1,40 @@
+﻿@{ 
+    System.Data.DataTable Qmcod1 = (System.Data.DataTable)ViewData["Qmcod"];
+}
+
+@if (ViewData["Qmcod"] != null)
+{
+    @Html.DevExpress().ComboBox(
+    settings =>
+    {
+        settings.Name = "Qmcod";
+        settings.SelectedIndex = 0;
+        settings.Properties.DropDownWidth = 500;
+        settings.Properties.DropDownStyle = DropDownStyle.DropDownList;
+        settings.CallbackRouteValues = new { Controller = "Home", Action = "QmcodPart" };
+        settings.Properties.CallbackPageSize = 30;
+        settings.Properties.IncrementalFilteringMode = IncrementalFilteringMode.StartsWith;
+        settings.Properties.TextFormatString = "{2}";
+        settings.Properties.ValueField = "Qmcod";
+        settings.Properties.TextField = "Qmcod";
+        settings.Properties.EnableClientSideAPI = true;
+        settings.Properties.ListBoxStyle.CssClass = "comStyle";
+        settings.Properties.ClientSideEvents.BeginCallback = "Qmcod_beginCallBack";
+        settings.PreRender = (sender, e) =>
+        {
+            MVCxComboBox cmb = sender as MVCxComboBox;
+            if (ViewData["QmcodS"] == null || (String)ViewData["QmcodS"] == "")
+                cmb.Value = "Выберите Код";
+            else cmb.Value = ViewData["QmcodS"];
+
+        };
+        settings.Properties.ValueType = typeof(string);
+        // if (Qmcod1!=null)
+        foreach (System.Data.DataColumn col in Qmcod1.Columns)
+        {
+            settings.Properties.Columns.Add(col.ColumnName, col.Caption, col.MaxLength);
+
+        }
+    }
+             ).BindList(ViewData["Qmcod"]).GetHtml()
+}

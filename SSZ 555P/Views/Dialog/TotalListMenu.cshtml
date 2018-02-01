@@ -1,0 +1,33 @@
+﻿@{
+    Layout = null;
+}
+
+<div id="PanelTotalList" style="background-color:#535353; height:55px;width:100%;display:inline-block;">
+    <span style="color:#fff;font-size:16px;float:left;margin:15px 0px 15px 15px;">Поиск</span>
+        @Html.DevExpress().TextBox(settings =>
+   {
+       settings.Name = "SearchTab1";
+       settings.Width = 240;
+       settings.Height = 35;
+       Unit.Percentage(100);
+   }).GetHtml()
+
+
+    <span style="color:#fff;font-size:16px;float:left;margin:15px 0px;">Дата</span>
+            @Html.DevExpress().DateEdit(settings =>
+{
+    settings.Name = "DateEdit";
+    settings.Properties.DisplayFormatString = "MM.yyyy";
+    settings.Date = DateTime.Now;
+    settings.Width = 200;
+    settings.Height = 35;
+}).GetHtml()
+
+    <a id="AppTotalList" style="margin-top:11px;"  class="btn btn-primary btn-lg">
+       Применить
+    </a>
+    <a id="urlTotalList"  href=@ViewBag.UrlList target="_blank" style="margin:11px 15px 0px 0px; float:right;" class="btn btn-primary btn-lg">
+        Скачать расчетный листок
+    </a>
+</div>
+

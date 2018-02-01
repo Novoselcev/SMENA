@@ -1,0 +1,547 @@
+@* DXCOMMENT: Configure GridView *@
+@Html.DevExpress().GridView(
+    settings =>
+    {
+        settings.Name = "GridView";
+        settings.CallbackRouteValues = new { Controller = "Home", Action = "GridViewPartialView" };
+        //    settings.SettingsEditing.Mode =  GridViewEditingMode.Batch;
+        settings.SettingsEditing.BatchEditSettings.ShowConfirmOnLosingChanges = false;
+        settings.ClientSideEvents.BatchEditStartEditing = "Grid_Batch";
+        settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+        settings.Height = System.Web.UI.WebControls.Unit.Percentage(100);
+        settings.Settings.VerticalScrollBarMode = ScrollBarMode.Visible;
+        settings.Settings.HorizontalScrollBarMode = ScrollBarMode.Visible;
+        settings.ControlStyle.BorderBottom.BorderWidth = System.Web.UI.WebControls.Unit.Pixel(1);
+        settings.Styles.Header.CssClass = "headerTab";
+
+
+        // DXCOMMENT: Configure grid's columns in accordance with data model fields
+        settings.KeyFieldName = "Objnr";
+        foreach (var col in (List<SSZ.Models.SetTab>)ViewBag.GridOperPos)
+        {
+            settings.Columns.Add(c =>
+            {
+                if (col.Name == "Usttxt")
+                {
+                    c.Caption = "Статус";
+                }
+                else if (col.Name == "Diaco")
+                {
+                    c.Caption = "Инфо";
+                }
+                else if (col.Name == "Mgvrg")
+                {
+                    c.Caption = "План кол.";
+                }
+                else if (col.Name == "Lmnga")
+                {
+                    c.Caption = "Вып. прод.";
+                }
+                else if (col.Name == "Xmnga")
+                {
+                    c.Caption = "Брак";
+                }
+                else
+                {
+                    c.Caption = col.Description;
+                }
+
+                c.FieldName = col.Name;
+                c.Width = col.width;
+                c.CellStyle.Font.Size = col.fontSize;
+                c.Visible = col.visibleCol;
+            });
+        }
+
+
+        // settings.Columns.Add("id");
+
+
+        /*    settings.Columns.Add(c =>
+            {
+                c.FieldName = "DiacoTxt";
+                c.Caption = "Описание проблемы";
+                c.Width = 75;
+                c.Visible = false;
+            });
+
+            settings.Columns.Add(c =>
+            {
+                c.FieldName = "ActsAlwd";
+                c.Caption = "Активность кнопок";
+                c.Width = 75;
+                c.Visible = false;
+            });
+
+
+            settings.Columns.Add(c =>
+            {
+                c.FieldName = "Diaty";
+                c.Caption = "Тип диагн. сообщения";
+                c.Width = 100;
+                c.Visible = false;
+            });
+
+            settings.Columns.Add(c =>
+            {
+                c.FieldName = "Qmnum";
+                c.Caption = "Сообщение";
+                c.Width = 100;
+                c.Visible = false;
+            });
+
+            settings.Columns.Add(c =>
+            {
+                c.FieldName = "usttxt";
+                c.Caption = "Статус";
+                c.Width = 75;
+
+            });
+            settings.Columns.Add(c =>
+            {
+                c.FieldName = "Diaco";
+                c.Caption = "Инфо";
+                c.Width = 80;
+
+            });
+
+            settings.Columns.Add(c =>
+            {
+                c.FieldName = "nprio";
+                c.Caption = "Приоритет";
+                c.Width = 100;
+                c.Visible = false;
+            });
+
+
+            settings.Columns.Add(c =>
+            {
+                c.FieldName = "aufnr";
+                c.Caption = "Заказ";
+                c.Width = 75;
+                c.CellStyle.Font.Size = 9;
+            });
+
+            settings.Columns.Add(c =>
+            {
+                c.FieldName = "matnrtxt";
+                c.Caption = "Наименование материала";
+                c.Width = 350;
+                c.CellStyle.Font.Size = 9;
+            });
+
+            settings.Columns.Add(c =>
+            {
+                c.FieldName = "matnr";
+                c.Caption = "Материал";
+                c.Width = 110;
+            });
+            /* settings.Columns.Add(c =>
+             {
+                 c.FieldName = "objectNameAUFK";
+                 c.Caption = "Наименование объекта";
+                 c.Width = 300;
+
+             });*/
+
+        /*       settings.Columns.Add(c =>
+               {
+                   c.FieldName = "vornr";
+                   c.Caption = "Операция";
+                   c.Width = 90;
+                   c.CellStyle.Font.Size = 9;
+               });
+
+               settings.Columns.Add(c =>
+               {
+                   c.FieldName = "ltxa";
+                   c.Caption = "Наименование операции";
+                   c.Width = 300;
+                   c.CellStyle.Font.Size = 9;
+                   //   c.EditFormSettings.Visible = DefaultBoolean.True;
+               });
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+               settings.Columns.Add(c =>
+               {
+                   c.FieldName = "Mgvrg";
+                   c.Caption = "План. кол.";
+                   c.Width = 110;
+
+               });
+
+
+               settings.Columns.Add(c =>
+               {
+                   c.FieldName = "lmnga";
+                   c.Caption = "Вып. прод.";
+                   c.Width = 100;
+
+               });
+
+               settings.Columns.Add(c =>
+               {
+                   c.FieldName = "xmnga";
+                   c.Caption = "Брак";
+                   c.Width = 110;
+
+               });
+
+
+               settings.Columns.Add(c =>
+               {
+                   c.FieldName = "meinh";
+                   c.Caption = "Е.И. опер.";
+                   c.Width = 100;
+
+               });
+
+               settings.Columns.Add(c =>
+               {
+                   c.FieldName = "StartDay";
+                   c.Caption = "Самое поздн.нач.";
+                   c.Width = 200;
+                   c.CellStyle.Font.Size = 9;
+               });
+
+
+
+               settings.Columns.Add(c =>
+               {
+
+               });
+
+
+               settings.Columns.Add(c =>
+               {
+                   c.FieldName = "Acti3";
+                   c.Caption = "Рабочее время(План)";
+                   c.Width = 200;
+                   c.CellStyle.Font.Size = 9;
+               });
+
+               settings.Columns.Add(c =>
+               {
+                   c.FieldName = "Unit3";
+                   c.Caption = "Е.И.";
+                   c.Width = 50;
+                   c.CellStyle.Font.Size = 9;
+               });
+
+               settings.Columns.Add(c =>
+               {
+                   c.FieldName = "lsm03";
+                   c.Caption = "Рабочее время(факт)";
+                   c.Width = 200;
+                   c.CellStyle.Font.Size = 9;
+               });
+
+               settings.Columns.Add(c =>
+               {
+                   c.FieldName = "ile03";
+                   c.Caption = "Е.И.";
+                   c.Width = 50;
+                   c.CellStyle.Font.Size = 9;
+               });
+
+
+               settings.Columns.Add(c =>
+               {
+                   c.FieldName = "Asszl";
+                   c.Caption = "Счетчик";
+                   c.Width = 100;
+                   c.Visible = false;
+               });
+
+
+               settings.Columns.Add(c =>
+               {
+                   c.FieldName = "werks";
+                   c.Caption = "Завод";
+                   c.Width = 100;
+
+               });
+
+               settings.Columns.Add(c =>
+               {
+                   c.FieldName = "arbpl";
+                   c.Caption = "Рабочее место";
+                   c.Width = 100;
+
+               });
+
+               settings.Columns.Add(c =>
+               {
+                   c.FieldName = "arbplTxt";
+                   c.Caption = "Краткое название";
+                   c.Width = 250;
+                   c.CellStyle.Font.Size = 10;
+               });
+
+
+
+
+
+               settings.Columns.Add(c =>
+               {
+                   c.FieldName = "Maknz";
+                   c.Caption = "Сообщение диспетчера";
+                   c.Visible = false;
+
+               });
+               /*
+                 settings.Columns.Add(c =>
+                 {
+                     c.FieldName = "beginTimeRealAFVV";
+                     c.Caption = "Факт нач.время";
+                     c.Width = 130;
+
+                 });
+
+
+                 settings.Columns.Add(c =>
+                 {
+                     c.FieldName = "endDateRealAFVGD";
+                     c.Caption = "Факт конец";
+                     c.Width = 100;
+
+                 });
+
+                 settings.Columns.Add(c =>
+                 {
+                     c.FieldName = "endTimeRealAFVV";
+                     c.Caption = "Факт кон.время";
+                     c.Width = 130;
+
+                 });
+                 settings.Columns.Add(c =>
+                 {
+                     c.FieldName = "machineTimePlannedAFVGD";
+                     c.Caption = "Маш.время(план)";
+                     c.Width = 130;
+
+                 });
+
+                 settings.Columns.Add(c =>
+                 {
+                     c.FieldName = "workTimePlannedAFVGD";
+                     c.Caption = "Раб.время(план)";
+                     c.Width = 130;
+
+                 });
+
+                 settings.Columns.Add(c =>
+                 {
+                     c.FieldName = "workTimeRealCORUF";
+                     c.Caption = "Раб.время(факт)";
+                     c.Width = 130;
+
+                 });
+
+                 settings.Columns.Add(c =>
+                 {
+                     c.FieldName = "timeMeasureUnitT006A";
+                     c.Caption = "Ед.изм. врем.";
+                     c.Width = 130;
+
+                 });*/
+
+
+
+
+        /*      settings.Columns.Add(c =>
+              {
+                  c.FieldName = "pernr";
+                  c.Caption = "Таб.номер";
+                  c.Width = 100;
+                  c.Visible = false;
+                  c.CellStyle.Font.Size = 10;
+              });
+
+              settings.Columns.Add(c =>
+              {
+                  c.FieldName = "pernrFn";
+                  c.Caption = "ФИО";
+                  c.Width = 160;
+                  c.Visible = false;
+                  c.CellStyle.Font.Size = 10;
+              });
+
+              /* settings.Columns.Add(c =>
+               {
+                   c.FieldName = "workerNamePA0002";
+                   c.Caption = "Имя сотрудника";
+                   c.Width = 160;
+
+               });*/
+
+
+
+
+
+        /*  settings.Columns.Add(c =>
+          {
+              c.FieldName = "maintenanceTimePlannedAFVGD";
+              c.Caption = "Время наладки(план)";
+              c.Width = 100;
+
+          });
+
+          settings.Columns.Add(c =>
+          {
+              c.FieldName = "maintenanceTimeRealCORUF";
+              c.Caption = "Время наладки(факт)";
+              c.Width = 100;
+
+          });
+
+          settings.Columns.Add(c =>
+          {
+              c.FieldName = "machineTimeRealCORUF";
+              c.Caption = "Маш.время(факт)";
+              c.Width = 130;
+
+          });
+
+          settings.Columns.Add(c =>
+          {
+              c.FieldName = "podtvOperationsQuanAFRUD";
+              c.Caption = "Подтв. кол.опер.";
+              c.Width = 130;
+
+          });*/
+
+
+        //устанавливаем цвет строк в соотвествии статуса
+        settings.HtmlRowPrepared = (c, e) =>
+        {
+            if (Convert.ToString(e.GetValue("Usttxt")) == "3")
+            {
+
+                e.Row.BackColor = System.Drawing.Color.FromArgb(230, 154, 156);
+
+            }
+            else if (Convert.ToString(e.GetValue("Usttxt")) == "2")
+            {
+                e.Row.BackColor = System.Drawing.Color.FromArgb(233, 202, 148);
+            }
+            else if (Convert.ToString(e.GetValue("Usttxt")) == "1")
+            {
+                e.Row.BackColor = System.Drawing.Color.FromArgb(180, 211, 180);
+            }
+            else if (Convert.ToString(e.GetValue("Usttxt")) == "4")
+            {
+                e.Row.BackColor = System.Drawing.ColorTranslator.FromHtml("#FFE3E3");
+            }
+            else
+            {
+                e.Row.BackColor = System.Drawing.Color.FromArgb(180, 180, 180);
+            }
+        };
+
+        settings.HtmlDataCellPrepared = (sender, e) =>
+        {
+
+            if (e.DataColumn.FieldName == "Diaco")
+            {
+                e.Cell.CssClass = "cellCenter";
+
+
+                if (Convert.ToString(e.GetValue("Diaco")) != "" )
+                {
+                    string str3 = e.Cell.Text;
+                    e.Cell.Text = "<div id='prtE'><span>"+ "E" + "</span></div>" + str3;
+                }
+
+                if (Convert.ToString(e.GetValue("Qmclo")) != "")
+                {
+                    string str3 = e.Cell.Text;
+                    e.Cell.Text = "<div id='prtR'><span>R</span></div>" + str3;
+                }
+
+                /*
+                                if (Convert.ToString(e.GetValue("nprio")) != "")
+                                {
+                                    string str3 = e.Cell.Text;
+                                    e.Cell.Text = "<div id='prt'><span>" + Convert.ToString(e.GetValue("nprio")) + "</span></div>" + str3;
+                                }*/
+
+                if (Convert.ToString(e.GetValue("Qmnum")) != "")
+                {
+                    string str3 = e.Cell.Text;
+                    e.Cell.Text = "<div id='prtM'><span>M</span></div>" + str3;
+                }
+
+            }
+
+
+
+            if (e.DataColumn.FieldName == "Usttxt")
+            {
+                if (Convert.ToString(e.GetValue("Usttxt")) == "3")
+                {
+
+                    e.Cell.Text = "<div id='square'></div>";
+                    e.Cell.CssClass = "RedOST";
+
+                }
+                else if (Convert.ToString(e.GetValue("Usttxt")) == "2")
+                {
+
+                    e.Cell.Text = "<div id='rect1'></div><div id='rect2'></div>";
+                    e.Cell.CssClass = "OrangeP";
+                }
+                else if (Convert.ToString(e.GetValue("Usttxt")) == "1")
+                {
+                    e.Cell.CssClass = "GreenS";
+                    e.Cell.Text = "<div id='triangle-right'><div id='triangle-right1'></div></div>";
+                }
+                else if (Convert.ToString(e.GetValue("Usttxt")) == "4")
+                {
+                    e.Cell.CssClass = "fiol";
+                    e.Cell.Text = "X";
+                }
+                else
+                {
+                    e.Cell.BackColor = System.Drawing.Color.FromArgb(180, 180, 180);
+                    e.Cell.Text = "";
+                }
+            }
+        };
+
+
+        settings.SettingsDetail.AllowOnlyOneMasterRowExpanded = false;
+        settings.SettingsDetail.ShowDetailRow = true;
+        settings.SetDetailRowTemplateContent(c =>
+        {
+        //  Html.RenderAction("linkTableDetails", "Home", new { ObjId = DataBinder.Eval(c.DataItem, "Objnr").ToString(), Asszl= DataBinder.Eval(c.DataItem, "Asszl").ToString() });
+        ViewContext.Writer.Write(
+            "<div style='padding:7px 0 12px 75px;'>" +
+        Html.ActionLink("Подоперации", "", null, new { href = "javascript:OnHyperLinkClick('" + DataBinder.Eval(c.DataItem, "Objnr").ToString() + "','" + DataBinder.Eval(c.DataItem, "Asszl").ToString() + "','0');", @class = "buttomAct" }) +
+        Html.ActionLink("Нормативная документация", "", null, new { href = "javascript:OnHyperLinkClick('" + DataBinder.Eval(c.DataItem, "Objnr").ToString() + "','" + DataBinder.Eval(c.DataItem, "Asszl").ToString() + "','1');", @class = "buttomAct" }) +
+        Html.ActionLink("Компоненты", "", null, new { href = "javascript:OnHyperLinkClick('" + DataBinder.Eval(c.DataItem, "Objnr").ToString() + "','" + DataBinder.Eval(c.DataItem, "Asszl").ToString() + "','2');", @class = "buttomAct" }) +
+        Html.ActionLink("ВПС", "", null, new { href = "javascript:OnHyperLinkClick('" + DataBinder.Eval(c.DataItem, "Objnr").ToString() + "','" + DataBinder.Eval(c.DataItem, "Asszl").ToString() + "','3');", @class = "buttomAct" })+
+        Html.ActionLink("Вых. формы", "", null, new { href = "javascript:OnHyperLinkClick('" + DataBinder.Eval(c.DataItem, "Objnr").ToString() + "','" + DataBinder.Eval(c.DataItem, "Asszl").ToString() + "','4');", @class = "buttomAct" }));
+
+        if (DataBinder.Eval(c.DataItem, "Sernp") != null  &&  DataBinder.Eval(c.DataItem, "Sernp").ToString() != "")
+            ViewContext.Writer.Write(Html.ActionLink("Серийные номера", "", null, new { href = "javascript:OnHyperLinkClick('" + DataBinder.Eval(c.DataItem, "Objnr").ToString() + "','" + DataBinder.Eval(c.DataItem, "Asszl").ToString() + "','5');", @class = "buttomAct" }) + "</div>");
+        else ViewContext.Writer.Write("</div>");
+    });
+
+
+        settings.SettingsBehavior.ColumnResizeMode = ColumnResizeMode.Control;
+        settings.SettingsSearchPanel.CustomEditorName = "SearchTab";
+        settings.SettingsPager.PageSize = 30;
+        settings.Styles.Header.BackgroundImage.ImageUrl = "/Content/Images/hidden.png";
+        settings.Styles.Header.BackColor = System.Drawing.ColorTranslator.FromHtml("#024c97");
+        settings.Styles.Header.ForeColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+        settings.SettingsPager.Mode = GridViewPagerMode.EndlessPaging;
+        settings.SettingsBehavior.AllowFocusedRow = true;
+        settings.Styles.FocusedRow.CssClass = "FocusTR";
+        settings.Styles.FocusedRow.BackColor = System.Drawing.Color.FromArgb(3, 95, 170);
+        settings.Styles.FocusedRow.ForeColor = System.Drawing.Color.White;
+        settings.ClientSideEvents.FocusedRowChanged = "OnGridFocusedRowChanged";
+        settings.ClientSideEvents.RowDblClick = "OnRowClickD";
+        settings.ClientSideEvents.EndCallback = "GEndCallback";
+        //  settings.Styles.Row.CssClass = "RowST";
+    }).Bind(Model).GetHtml()

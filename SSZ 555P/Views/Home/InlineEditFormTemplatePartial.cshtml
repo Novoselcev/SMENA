@@ -1,0 +1,13 @@
+﻿@model SSZ.Models.DefectOZM;
+@{
+    Layout = null;
+ }
+
+<div style="color:#fff">
+   <table class="tableDef" style="height:200px;">
+       <tr><td>Внешний номер дефектного объекта:</td><td>@Html.TextBoxFor(m => m.Prueflinr)  </td></tr>
+       <tr><td>Число обнаруженных дефектов:</td><td>@Model.Anzfehler</td></tr>
+       <tr><td>Дефектное количество компонента:</td><td>@Model.Fmgeig</td></tr>
+       <tr><td>Единица измерения:</td><td>@Model.Fmgein</td></tr>
+   </table>
+</div>

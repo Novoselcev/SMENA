@@ -1,0 +1,83 @@
+﻿@model SSZ.Models.Logout
+@{
+    ViewBag.Title = "Вход в систему";
+    Layout = "~/Views/Shared/_StartLayout.cshtml";
+}
+
+@using (Html.BeginForm("Start", "Home", FormMethod.Post, new { @class="the_form"}))
+{
+    @Html.AntiForgeryToken();
+    @Html.ValidationSummary(true);
+    <table class="logon">
+        <tr>
+            <td colspan="2"><img src="~/Content/Images/Azimut.png" /><span>СМЕНА - Вход в систему</span> </td>
+        </tr>
+        <tr>
+            <td>
+                Логин
+            </td>
+            <td style="width:215px;" >
+                <div class="editor-field">
+                    @Html.TextBoxFor(m => m.Username)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+               Пароль
+            </td>
+            <td >
+                @Html.PasswordFor(m=>m.Password)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Система
+            </td>
+            <td >
+                @Html.DropDownListFor(m=>m.SystemSap, ViewBag.SysSap as SelectList)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Завод
+            </td>
+            <td >
+                @Html.DropDownListFor(m => m.Plant, ViewBag.Plant1 as SelectList)
+            </td>
+        </tr>
+        <tr >
+            <td>
+                Язык
+            </td>
+            <td style="padding-right:8.7em;float:right;">
+               @Html.TextBoxFor(m => m.Lang)                
+            </td>
+        </tr>
+        <tr id="tabNomerV">
+            <td>
+                Таб. №
+            </td>
+            <td>
+                <div class="editor-field">
+                    @Html.TextBoxFor(m => m.TabNomer)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="editor-field">
+                    @Html.ValidationMessageFor(m => m.TabNomer) <br>
+                    @Html.ValidationMessageFor(m => m.Username)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" name="send" value="Вход" />
+<input type="reset" value="Отмена" /></td>
+        </tr>
+    </table>
+    
+}
+
+<script> $.enhanceFormsBehaviour();</script>

@@ -1,0 +1,32 @@
+@{
+    var gridLookup = Html.DevExpress().GridLookup(settings => {
+        settings.Name = "MaterInputGridLookup";
+        settings.KeyFieldName = "osnZapMaterRESB";
+
+        settings.GridViewProperties.CallbackRouteValues = new { Controller = "Home", Action = "MaterInputGridLookupPartial" };
+        settings.Properties.SelectionMode = GridLookupSelectionMode.Single;
+        settings.Properties.TextFormatString = "{0}";
+
+
+        settings.GridViewProperties.SettingsPager.Visible = true;
+        settings.GridViewProperties.Settings.ShowGroupPanel = false;
+        settings.GridViewProperties.Settings.ShowFilterRow = false;
+        settings.Width = Unit.Percentage(100);
+
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "osnZapMaterRESB";
+            c.Caption = "Номер материала";
+            c.Width = 60;
+
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "materialDescrMAKT";
+            c.Caption = "Описание материала";
+            c.Width = 120;
+
+        });
+    });
+}
+@gridLookup.BindList(Model).GetHtml()

@@ -1,0 +1,36 @@
+﻿@Html.DevExpress().PopupControl(settings =>
+{
+    settings.Name = "PopupTotalList";
+    settings.Width =800;
+    settings.AllowResize = true;
+    settings.ShowHeader = false;
+    settings.ShowOnPageLoad = false;
+    settings.AllowDragging = true;
+    settings.DragElement = DragElement.Window;
+    settings.CloseAction = CloseAction.CloseButton;
+    settings.CloseOnEscape = true;
+    settings.Modal = true;
+    settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+    settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
+    settings.Styles.Content.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+    settings.Styles.Content.Border.BorderWidth = 1;
+    settings.Styles.Content.Border.BorderColor = System.Drawing.ColorTranslator.FromHtml("#888");
+    settings.ClientSideEvents.BeginCallback = "OnPopupBeginCallbackOper";
+    settings.SetContent(() =>
+    {
+        ViewContext.Writer.Write("<div style='float: right !important; position: absolute; top: 0px; right: -45px;'>");
+        Html.DevExpress().Image(image =>
+        {
+            image.Name = "Closebut5";
+            image.ImageUrl = "~/Content/Images/CloseButtonCross.png";
+            image.Width = 40;
+            image.Height = 40;
+            image.Properties.EnableClientSideAPI = true;
+            image.Properties.ClientSideEvents.Click = "function(s,e) {PopupTotalList.Hide();}";
+        }).Render();
+        ViewContext.Writer.Write("</div>");
+        Html.RenderAction("TotalListMenu", "Dialog", null);
+        Html.RenderAction("TotalList", "Dialog", null);
+    });
+
+}).GetHtml()

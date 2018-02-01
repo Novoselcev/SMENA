@@ -1,0 +1,131 @@
+﻿@{ 
+    bool vis = false;
+    if (ViewBag.SerMumber != null && ViewBag.SerMumber == true)
+    {
+        vis = true;
+    }
+
+}
+
+
+@Html.DevExpress().PageControl(settings =>
+{
+    settings.Name = "TabControl";
+    settings.ActiveTabIndex = Convert.ToInt32(ViewBag.pageID);
+    settings.Styles.Content.Border.BorderColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+    settings.Styles.Content.Border.BorderStyle = BorderStyle.Solid;
+    settings.Styles.Content.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+    settings.Styles.Content.BackgroundImage.ImageUrl = "/Content/Images/hidden.png";
+    settings.TabPages.Add(tab =>
+    {
+        tab.Name = "Tab 0";
+        tab.Text = "Подоперации";
+        tab.TabStyle.Font.Size = 14;
+        tab.ActiveTabStyle.Border.BorderColor= System.Drawing.ColorTranslator.FromHtml("#ffffff");
+        tab.TabStyle.BackgroundImage.ImageUrl = "/Content/Images/hidden.png";
+        tab.TabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+        tab.TabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#aaaaaa");
+        tab.ActiveTabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+        tab.ActiveTabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#FFFFFF");
+        tab.SetContent(()=> {
+            Html.RenderAction("tabPodOper1", "Home");
+            //ViewContext.Writer.Write("<span id='subOperationsTab'></span>");
+        });
+
+
+    });
+    settings.TabPages.Add(tab =>
+    {
+        tab.Name = "Tab 1";
+        tab.Text = "Нормат. документация";
+        tab.ActiveTabStyle.Border.BorderColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+        tab.TabStyle.BackgroundImage.ImageUrl = "/Content/Images/hidden.png";
+        tab.TabStyle.Font.Size = 14;
+        tab.TabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+        tab.TabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#aaaaaa");
+        tab.ActiveTabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+        tab.ActiveTabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#FFFFFF");
+        tab.SetContent(() =>
+        {
+            Html.RenderAction("GridViewPartialDoc", "Home");
+            //ViewContext.Writer.Write("<span id='normDocumentTab'></span>");
+        });
+    });
+    settings.TabPages.Add(tab =>
+    {
+        tab.Name = "Компоненты";
+        tab.Text = "Компоненты";
+        tab.ActiveTabStyle.Border.BorderColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+        tab.TabStyle.BackgroundImage.ImageUrl = "/Content/Images/hidden.png";
+        tab.TabStyle.Font.Size = 14;
+        tab.TabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+        tab.TabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#aaaaaa");
+        tab.ActiveTabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+        tab.ActiveTabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#FFFFFF");
+        tab.SetContent(() =>
+        {
+            Html.RenderAction("GridView1PartialComp", "Home");
+            //ViewContext.Writer.Write("<span id='componentsTab'></span>");
+        });
+    });
+    settings.TabPages.Add(tab =>
+    {
+        tab.Name = "Tab 3";
+        tab.Text = "ВПС";
+        tab.ActiveTabStyle.Border.BorderColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+        tab.TabStyle.BackgroundImage.ImageUrl = "/Content/Images/hidden.png";
+        tab.TabStyle.Font.Size = 14;
+        tab.TabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+        tab.TabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#aaaaaa");
+        tab.ActiveTabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+        tab.ActiveTabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#FFFFFF");
+        tab.SetContent(() =>
+        {
+            Html.RenderAction("GridViewPartialVPS", "Home");
+            //ViewContext.Writer.Write("<span id='vpsTab'></span>");
+        });
+
+    });
+    settings.TabPages.Add(tab =>
+    {
+        tab.Name = "Tab 5";
+        tab.Text = "Вых. формы";
+        tab.ActiveTabStyle.Border.BorderColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+        tab.TabStyle.BackgroundImage.ImageUrl = "/Content/Images/hidden.png";
+        tab.TabStyle.Font.Size = 14;
+        tab.TabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+        tab.TabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#aaaaaa");
+        tab.ActiveTabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+        tab.ActiveTabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#FFFFFF");
+        tab.SetContent(() =>
+        {
+            Html.RenderAction("GridViewPartialTehDoc", "Home");
+            //ViewContext.Writer.Write("<span id='vpsTab'></span>");
+        });
+
+    });
+    if (vis)
+    {
+        settings.TabPages.Add(tab =>
+        {
+            tab.Name = "Tab 4";
+            tab.Text = "Серийный №";
+           // tab.Visible = ViewBag.SerMumber;
+            tab.ActiveTabStyle.Border.BorderColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+            tab.TabStyle.BackgroundImage.ImageUrl ="/Content/Images/hidden.png";
+            tab.TabStyle.Font.Size = 14;
+            tab.TabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+            tab.TabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#aaaaaa");
+            tab.ActiveTabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+            tab.ActiveTabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#FFFFFF");
+            tab.SetContent(() =>
+            {
+                Html.RenderAction("GridViewPartialSen", "Home");
+                //ViewContext.Writer.Write("<span id='vpsTab'></span>");
+            });
+
+        });
+    }
+}).GetHtml()
+
+

@@ -1,0 +1,21 @@
+﻿
+@Html.DevExpress().PopupControl(settings =>
+{
+    settings.Name = "PopupCaution";
+    settings.AllowResize = false;
+    settings.ShowHeader = false;
+    settings.ShowOnPageLoad = false;
+    settings.AllowDragging = true;
+    settings.DragElement = DragElement.Window;
+    settings.CloseAction = CloseAction.CloseButton;
+    settings.CloseOnEscape = true;
+    settings.Modal = true;
+    settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+    settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
+    settings.Styles.Content.BackColor = System.Drawing.Color.Transparent;
+    settings.PopupElementID = "cautionTab";
+    settings.SetContent(() =>
+    {
+        Html.RenderPartial("UserCaution", null);
+    });
+}).GetHtml()

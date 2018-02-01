@@ -1,0 +1,42 @@
+﻿
+@{
+    System.Data.DataTable Oteil1 = (System.Data.DataTable)ViewData["Oteil"];
+}
+
+@if (ViewData["Oteil"] != null)
+{
+    @Html.DevExpress().ComboBox(
+    settings =>
+    {
+        settings.Name = "Oteil";
+        settings.SelectedIndex = 0;
+        settings.Properties.DropDownWidth = 500;
+        settings.Properties.DropDownStyle = DropDownStyle.DropDownList;
+        settings.CallbackRouteValues = new { Controller = "Home", Action = "OteilPart" };
+        settings.Properties.CallbackPageSize = 30;
+        settings.Properties.IncrementalFilteringMode = IncrementalFilteringMode.StartsWith;
+        settings.Properties.TextFormatString = "{2}";
+        settings.Properties.ValueField = "Oteil";
+        settings.Properties.TextField = "Oteil";
+        settings.Properties.EnableClientSideAPI = true;
+        settings.Properties.ClientSideEvents.BeginCallback = "Oteil_beginCallBack";
+        settings.Properties.ListBoxStyle.CssClass = "comStyle";
+        settings.PreRender = (sender, e) =>
+        {
+            MVCxComboBox cmb = sender as MVCxComboBox;
+            if (ViewData["OteilS"] == null || (String)ViewData["OteilS"] == "")
+                cmb.Value = "Выберите Код";
+            else cmb.Value = ViewData["OteilS"];
+            
+
+        };
+        settings.Properties.ValueType = typeof(string);
+        if (Oteil1 != null)
+            foreach (System.Data.DataColumn col in Oteil1.Columns)
+            {
+                settings.Properties.Columns.Add(col.ColumnName, col.Caption, col.MaxLength);
+
+            }
+    }
+             ).BindList(ViewData["Oteil"]).GetHtml()
+}

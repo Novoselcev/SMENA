@@ -1,0 +1,135 @@
+﻿@model SSZ.PutNotification.YsfcOperQnoticeWs
+@{
+    System.Data.DataTable Qmgrp1 = (System.Data.DataTable)ViewData["Qmgrp"];
+    System.Data.DataTable Otgrp1 = (System.Data.DataTable)ViewData["Otgrp"];
+}
+<table class="popup__table_confirm1" style="width:700px;">
+    <tr>
+        <td width="150px">
+            Номер сообщения
+        </td>
+        <td width="160px">@Model.Qmnum</td>
+        <td width="150px">
+            Тип сообщения
+        </td>
+        <td width="140px">
+
+            @Model.Qmart
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Несоотвествие возникло
+        </td>
+        <td style="padding: 0px;background-color:white;">
+            @if (ViewData["Qmgrp"] != null)
+            {
+                @Html.DevExpress().ComboBox(
+    settings =>
+    {
+        settings.Name = "Qmgrp";
+        settings.SelectedIndex = 0;
+        settings.Properties.DropDownWidth = 400;
+        settings.Properties.DropDownStyle = DropDownStyle.DropDownList;
+        // settings.CallbackRouteValues = new { Controller = "Editors", Action = "MultiColumnComboBoxPartial" };
+        settings.Properties.CallbackPageSize = 30;
+        settings.Properties.IncrementalFilteringMode = IncrementalFilteringMode.StartsWith;
+        settings.Properties.TextFormatString = "{1}";
+        settings.Properties.ListBoxStyle.CssClass = "comStyle";
+        settings.Properties.ValueField = "Qmgrp";
+        settings.Properties.TextField = "Qmgrp";
+        settings.Properties.EnableClientSideAPI = true;
+        settings.Properties.ClientSideEvents.SelectedIndexChanged
+            = "onComboBoxQmgrpChanged";
+        //  settings.Properties.ClientSideEvents.EndCallback = "OnEndCallback";
+        settings.PreRender = (sender, e) =>
+        {
+            MVCxComboBox cmb = sender as MVCxComboBox;
+            if (Model.Qmgrp == null || Model.Qmgrp == "")
+                cmb.Value = "Выберите группу";
+            else cmb.Value = Model.Qmgrp;
+
+        };
+        settings.Properties.ValueType = typeof(string);
+        foreach (System.Data.DataColumn col in Qmgrp1.Columns)
+        {
+            settings.Properties.Columns.Add(col.ColumnName, col.Caption, col.MaxLength);
+        }
+    }
+             ).BindList(ViewData["Qmgrp"]).GetHtml()
+            }
+
+        </td>
+        <td>
+            Кодирование
+        </td>
+        <td style="padding: 0px;background-color:white;">
+            @Html.Partial("QmcodPart")
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Стадия выявления
+        </td>
+        <td style="padding: 0px;background-color:white;">
+            @if (ViewData["Otgrp"] != null)
+            {
+                @Html.DevExpress().ComboBox(
+    settings =>
+    {
+        settings.Name = "Otgrp";
+        settings.SelectedIndex = 0;
+        settings.Properties.DropDownWidth = 400;
+        settings.Properties.DropDownStyle = DropDownStyle.DropDownList;
+        // settings.CallbackRouteValues = new { Controller = "Editors", Action = "MultiColumnComboBoxPartial" };
+        settings.Properties.CallbackPageSize = 30;
+        settings.Properties.IncrementalFilteringMode = IncrementalFilteringMode.StartsWith;
+        settings.Properties.TextFormatString = "{1}";
+        settings.Properties.ValueField = "Otgrp";
+        settings.Properties.TextField = "Otgrp";
+        settings.Properties.ListBoxStyle.CssClass = "comStyle";
+        settings.Properties.ClientSideEvents.SelectedIndexChanged
+            = "onComboBoxOtgrpChanged";
+        settings.PreRender = (sender, e) =>
+        {
+            MVCxComboBox cmb = sender as MVCxComboBox;
+            if (Model.Otgrp == null || Model.Otgrp == "")
+                cmb.Value = "Выберите группу";
+            else cmb.Value = Model.Otgrp;
+
+        };
+        settings.Properties.ValueType = typeof(string);
+        foreach (System.Data.DataColumn col in Otgrp1.Columns)
+        {
+            settings.Properties.Columns.Add(col.ColumnName, col.Caption, col.MaxLength);
+        }
+    }
+             ).BindList(ViewData["Otgrp"]).GetHtml()
+            }
+
+        </td>
+        <td>
+            Часть объекта
+        </td>
+        <td style="padding: 0px;background-color:white;">
+            @Html.Partial("OteilPart")
+        </td>
+    </tr>
+
+    <tr>
+        <td>Координатор</td>
+        <td style="padding: 0px;background-color:white;">@Html.Partial("VCoord")</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Дефектное количество</td>
+        <td style="padding: 0px;background-color:white;">@Html.TextBoxFor(m => m.Rkmng)</td>
+        <td>Ед. измерения</td>
+        <td>@Model.Mgein</td>
+
+    </tr>
+   
+
+</table>
+

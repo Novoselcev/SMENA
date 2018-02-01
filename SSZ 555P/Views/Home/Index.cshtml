@@ -1,0 +1,33 @@
+
+@model System.Collections.IEnumerable
+@{
+    ViewBag.Title = "Смена";
+   // Layout = "~/Views/Shared/_rootLayout.cshtml";
+}
+
+
+
+<div style="background-color: #1a1a1a; padding: 15px; margin-bottom: -10px;">
+<div id="tooltip"></div>
+    <div id="qVertu"></div>
+    @Html.Partial("GridViewPartialView", Model)
+    <div id="lineVertu"></div>
+    <div id="lineHor"></div>
+</div>
+@Html.Partial("PopupDetail")
+@Html.Partial("PopupCaution")
+@Html.Partial("PopupConfirmTab")
+@Html.Partial("PopupMessage")
+@Html.Partial("PopupRedAlertSimple")
+@Html.Partial("PopupRedAlert")
+@Html.Partial("PopupTableDetails")
+@Html.Partial("PopupSearchTab")
+@Html.Partial("~/Views/Shared/Popup/PopupTotalList.cshtml", null)
+
+
+
+
+
+
+
+

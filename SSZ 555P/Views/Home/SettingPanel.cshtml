@@ -1,0 +1,19 @@
+﻿
+<table class="tabSetting" >
+    <tr>
+        <td valign="top" style="padding-left:6em;"><span style="color:#fff;font-size:20px;">Настройки</span>
+            <ul >
+                <li id="menusetTable">Вид таблиц</li>
+                <li id="menusetCommon">Общие</li>
+                <li id="menusetCommon"><a href="~/Doc/instr_smena.docx" style="text-decoration:none; color:#bbb;" target="_blank">Инструкция</a></li>
+            </ul>
+        </td>
+        <td  valign="top" style="padding:0 2em;">
+           <div id="tabsetg" > @Html.Partial("PartialTabSetting1")</div>
+           <div id="commonset">@Html.Partial("Common")</div>
+         
+        </td>
+    </tr>
+</table>
+
+

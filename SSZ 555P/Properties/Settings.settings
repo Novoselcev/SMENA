@@ -1,0 +1,36 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SSZ.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SSZ_Hit_List_YGUI_GET_F4HELP_HIT_LIST" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://erp-dev.sapfir.local:8000/sap/bc/srt/rfc/sap/ygui_get_f4help_hit_list_webs/400/ygui_get_f4help_hit_list/ygui_get_f4help_hit_list_bind</Value>
+    </Setting>
+    <Setting Name="SSZ_Get_facade_YGUI_GET_FACADE_METADATA" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://erp-dev.sapfir.local:8000/sap/bc/srt/rfc/sap/ygui_get_facade_metadata_webs/400/ygui_get_facade_metadata/ygui_get_facade_metadata_bind</Value>
+    </Setting>
+    <Setting Name="SSZ_ReuseGrid_YGUI_REUSE_GRID_VARIANT" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://erp-dev.sapfir.local:8000/sap/bc/srt/rfc/sap/ygui_reuse_grid_variant_webs/400/ygui_reuse_grid_variant/ygui_reuse_grid_variant_bind</Value>
+    </Setting>
+    <Setting Name="SSZ_SessionSap_YGUI_HANDLE_PERNR_SESSION" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://erp-dev.sapfir.local:8000/sap/bc/srt/rfc/sap/ygui_handle_pernr_session_webs/400/ygui_handle_pernr_session/ygui_handle_pernr_session_bind</Value>
+    </Setting>
+    <Setting Name="SSZ_PUT_OPERATION_TICKET_YSFC_PUT_OPERATION_TICKET" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://erp-dev.sapfir.local:8000/sap/bc/srt/rfc/sap/ysfc_put_operation_ticket_webs/400/ysfc_put_operation_ticket/ysfc_put_operation_ticket_bind</Value>
+    </Setting>
+    <Setting Name="SSZ_GetStatistics_YSFC_GET_STATISTICS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://erp-dev.sapfir.local:8000/sap/bc/srt/rfc/sap/ysfc_get_statistics_webs/400/ysfc_get_statistics/ysfc_get_statistics_bind</Value>
+    </Setting>
+    <Setting Name="SSZ_PutNotification_YSFC_PUT_NOTIFICATION" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://erp-dev.sapfir.local:8000/sap/bc/srt/rfc/sap/ysfc_put_notification_webs/400/ysfc_put_notification/ysfc_put_notification_bind</Value>
+    </Setting>
+    <Setting Name="SSZ_GetNotif_YSFC_GET_NOTIF_PRO_ITEMS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://erp-dev.sapfir.local:8000/sap/bc/srt/rfc/sap/ysfc_get_notif_pro_items_webs/400/ysfc_get_notif_pro_items/ysfc_get_notif_pro_items_bind</Value>
+    </Setting>
+    <Setting Name="SSZ_GetOperService_YSFC_GET_OPERATIONS_LIST" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://erp-dev.sapfir.local:8000/sap/bc/srt/rfc/sap/ysfc_get_operations_list_webs/400/ysfc_get_operations_list/ysfc_get_operations_list_bind</Value>
+    </Setting>
+    <Setting Name="SSZ_GetOperDetail_YSFC_GET_OPERATION_DETAIL" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://erp-dev.sapfir.local:8000/sap/bc/srt/rfc/sap/ysfc_get_operation_detail_webs/400/ysfc_get_operation_detail/ysfc_get_operation_detail_bind</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

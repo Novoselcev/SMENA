@@ -1,0 +1,212 @@
+﻿@functions {
+    string GetSearchTetx()
+    {
+        return ViewData["SearchText"] != null ? ViewData["SearchText"].ToString() : "";
+    }
+        }
+
+
+    @{
+        Html.EnableClientValidation();
+        Html.EnableUnobtrusiveJavaScript();
+        var treeList = Html.DevExpress().TreeList(settings =>
+        {
+            settings.Name = "TreeList";
+            settings.CallbackRouteValues = new { Controller = "Home", Action = "DefMat" };
+            settings.CustomActionRouteValues = new { Controller = "Home", Action = "DefMatCustom" };
+            settings.SettingsEditing.UpdateNodeRouteValues = new { Controller = "Home", Action = "InlineEditingWithTemplateUpdatePostPartial" };
+            settings.SettingsBehavior.ExpandCollapseAction = TreeListExpandCollapseAction.NodeClick;
+            settings.Styles.Header.BackColor = System.Drawing.Color.FromArgb(2, 77, 152);
+            //  settings.Styles.Header.Border.BorderColor = System.Drawing.Color.FromArgb(26, 26, 26);
+            // settings.Styles.Header.Border.BorderWidth = 1;
+            settings.Styles.Header.ForeColor = System.Drawing.Color.White;
+            settings.Styles.Cell.BorderBottom.BorderColor = System.Drawing.Color.FromArgb(170, 170, 170);
+            settings.Styles.Cell.BorderBottom.BorderWidth = 1;
+            settings.Width = 780;
+            //  settings.Styles.Cell.BackColor = System.Drawing.Color.White;
+            settings.Styles.Cell.HorizontalAlign = HorizontalAlign.Center;
+            settings.Styles.Cell.Font.Size = 11;
+            settings.Styles.Cell.Paddings.Padding = 5;
+            settings.Styles.Header.Paddings.Padding = 5;
+            //   settings.Settings.GridLines = System.Web.UI.WebControls.GridLines.Both;
+            settings.Styles.Node.BackColor = System.Drawing.Color.White;
+            settings.Settings.ScrollableHeight = 300;
+            settings.Settings.HorizontalScrollBarMode = ScrollBarMode.Auto;
+            /*
+
+            settings.SettingsCookies.Enabled = true;
+            settings.SettingsCookies.StoreExpandedNodes = true;
+            settings.SettingsCookies.StoreSelection = true;*/
+
+            settings.SettingsSelection.Enabled = true;
+
+
+            settings.ClientSideEvents.SelectionChanged = "function(s, e) { s.PerformCallback(); }";
+            settings.Images.CollapsedButton.Url = "/Content/Images/plus.png";
+            settings.Images.ExpandedButton.Url = "/Content/Images/minus.png";
+
+
+
+            settings.CommandColumn.Visible = true;
+            settings.CommandColumn.EditButton.Visible = true;
+            settings.CommandColumn.ButtonType = ButtonType.Image;
+            settings.CommandColumn.CellStyle.Paddings.PaddingBottom = 6;
+            settings.CommandColumn.EditButton.Image.Url = "/Content/Images/refreshE.png";
+            settings.CommandColumn.Width = 20;
+
+
+            settings.HtmlDataCellPrepared = (s, e) =>
+            {
+                MVCxTreeList treeList1 = (MVCxTreeList)s;
+                if (treeList1.FindNodeByKeyValue(e.NodeKey).HasChildren)
+                {
+                    e.Cell.CssClass = "ParrentNode";
+
+                }
+
+
+            };
+
+            settings.PreRender = (s, e) =>
+            {
+                MVCxTreeList treeList1 = (MVCxTreeList)s;
+                TreeListNodeIterator iter = treeList1.CreateNodeIterator();
+                TreeListNode node = iter.Current;
+                while (node != null)
+                {
+                    if (Convert.ToString(node.GetValue("FlgMark")) == "X")
+                    {
+                        node.Selected = true;
+                    }
+                    node = iter.GetNext();
+                }
+            };
+
+
+
+            settings.KeyFieldName = "ID";
+            settings.ParentFieldName = "ID_parent";
+            settings.Columns.Add(c =>
+            {
+                c.FieldName = "Stufe";
+                c.Caption = "Уровень";
+                c.Width = 60;
+                c.CellStyle.Font.Size = 10;
+                c.EditFormSettings.Visible = DefaultBoolean.False;
+                c.SetEditCellTemplateContent(c1 =>
+                {
+                    c1.Visible = false;
+                });
+            });
+
+            settings.Settings.VerticalScrollBarMode = ScrollBarMode.Visible;
+            settings.Columns.Add(c =>
+            {
+                c.FieldName = "Bautl";
+                c.Caption = "Номер ОЗМ";
+                c.Width = 100;
+                c.CellStyle.Font.Size = 10;
+                c.SetEditCellTemplateContent(c1 =>
+                {
+                    c1.Visible = false;
+                });
+                c.SetDataCellTemplateContent(t =>
+                {
+                    ViewContext.Writer.Write(SSZ.Helper.TreeListHighlightHelper.GetCellText(t, GetSearchTetx()));
+                });
+                //  c.EditCellTemplate = editt;
+
+            });
+            settings.Columns.Add(c =>
+            {
+                c.FieldName = "BautlTxt";
+                c.Caption = "Наименование ОЗМ";
+                c.Width = 200;
+                c.CellStyle.Font.Size = 10;
+                c.EditFormSettings.Visible = DefaultBoolean.False;
+                c.SetEditCellTemplateContent(c1 =>
+                {
+                    c1.Visible = false;
+                });
+            });
+
+            settings.Columns.Add(c =>
+            {
+                c.FieldName = "Prueflinr";
+                c.Caption = "Позиционное обозначение";
+                c.Width = 150;
+                c.CellStyle.Font.Size = 10;
+                c.EditFormSettings.Visible = DefaultBoolean.False;
+                c.SetEditCellTemplateContent(c1 =>
+                {
+                    c1.Visible = false;
+                });
+            });
+
+            settings.Settings.VerticalScrollBarMode = ScrollBarMode.Visible;
+            settings.Columns.Add(c =>
+            {
+                c.FieldName = "Anzfehler";
+                c.Caption = "Количество";
+                c.Width = 100;
+                c.CellStyle.Font.Size = 10;
+                c.SetEditCellTemplateContent(c1 =>
+                {
+                    c1.Visible = false;
+                });
+                //  c.EditCellTemplate = editt;
+
+            });
+            settings.Columns.Add(c =>
+            {
+                c.FieldName = "Fmgein";
+                c.Caption = "Е.И.";
+                c.Width = 60;
+                c.CellStyle.Font.Size = 10;
+                c.EditFormSettings.Visible = DefaultBoolean.False;
+                c.SetEditCellTemplateContent(c1 =>
+                {
+                    c1.Visible = false;
+                });
+            });
+
+
+
+            settings.SettingsPager.Visible = true;
+            //  settings.SettingsSelection.Enabled = true;
+            settings.Styles.SelectedNode.BackColor = System.Drawing.ColorTranslator.FromHtml("#024c97");
+            settings.Styles.SelectedNode.ForeColor = System.Drawing.Color.White;
+            settings.CellEditorInitialize = (s, e) =>
+            {
+                ASPxEdit editor = (ASPxEdit)e.Editor;
+                editor.ValidationSettings.Display = Display.Dynamic;
+                editor.Width = 500;
+            };
+            settings.SettingsEditing.Mode = TreeListEditMode.EditFormAndDisplayNode;
+            settings.SetEditFormTemplateContent(c =>
+            {
+
+                Html.RenderPartial("InlineEditFormTemplatePartial1", SSZ.Helper.TreeListInlineEditingDemoHelper.GetEditedPost(c));
+            });
+            settings.SettingsEditing.Mode = TreeListEditMode.EditFormAndDisplayNode;
+
+
+            settings.ClientSideEvents.SelectionChanged = "OnSelectionChangedTL";
+            settings.ClientSideEvents.BeginCallback = "OnBeginCallbackTL";
+
+          settings.BeforeGetCallbackResult = (s, e) =>
+            {
+                if (ViewData["IsNewSearch"] == null) return;
+                MVCxTreeList treeList3 = (MVCxTreeList)s;
+                TreeListNodeIterator inter = new TreeListNodeIterator(treeList3.RootNode);
+                while (inter.Current != null)
+                {
+                    SSZ.Helper.TreeListHighlightHelper.CheckNode(inter.Current, GetSearchTetx());
+                    inter.GetNext();
+                }
+
+            };
+
+        });
+    }
+    @treeList.Bind(Model).GetHtml()

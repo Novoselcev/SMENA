@@ -1,0 +1,207 @@
+﻿    <div class="popup__main">
+        <table class="popup__table_top">
+            <tr>
+                <td width="250px">
+                    Объект
+                </td>
+                <td width="100px">
+                    @Html.DevExpress().TextBox(settings =>
+               {
+                   settings.Width = Unit.Percentage(100);
+                   settings.Height = 35;
+                   settings.Name = "TextBox0";
+               }).GetHtml()
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Рабочее место
+                </td>
+                <td>
+                    @Html.Action("WorkPlaceInputGridLookupPartial")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Завод
+                </td>
+                <td>
+                    @Html.Action("PlantInputGridLookupPartial")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Запланированный срок начала
+                </td>
+                <td>
+                    @Html.DevExpress().DateEdit(
+                settings =>
+                {
+                    settings.Name = "plannedStartTermDateEdit";
+                    settings.Properties.UseMaskBehavior = true;
+                    settings.Properties.EditFormat = EditFormat.Custom;
+                    settings.Properties.EditFormatString = "dd/MM/yyyy hh:mm tt";
+                    settings.Properties.TimeSectionProperties.Visible = true;
+                    settings.Properties.TimeSectionProperties.TimeEditProperties.EditFormat = EditFormat.Custom;
+                    settings.Properties.TimeSectionProperties.TimeEditProperties.EditFormatString = "hh:mm tt";
+                    //settings.Date = DateTime.Now;
+                    settings.Width = Unit.Percentage(100);
+                }).GetHtml()
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Запланированный срок конца
+                </td>
+                <td>
+                    @Html.DevExpress().DateEdit(
+                settings =>
+                {
+                    settings.Name = "plannedEndTermDateEdit";
+                    settings.Properties.UseMaskBehavior = true;
+                    settings.Properties.EditFormat = EditFormat.Custom;
+                    settings.Properties.EditFormatString = "dd/MM/yyyy hh:mm tt";
+                    settings.Properties.TimeSectionProperties.Visible = true;
+                    settings.Properties.TimeSectionProperties.TimeEditProperties.EditFormat = EditFormat.Custom;
+                    settings.Properties.TimeSectionProperties.TimeEditProperties.EditFormatString = "hh:mm tt";
+                    //settings.Date = DateTime.Now;
+                    settings.Width = Unit.Percentage(100);
+                }).GetHtml()
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Фактический срок начала
+                </td>
+                <td>
+                    @Html.DevExpress().DateEdit(
+                settings =>
+                {
+                    settings.Name = "actualStartTermDateEdit";
+                    settings.Properties.UseMaskBehavior = true;
+                    settings.Properties.EditFormat = EditFormat.Custom;
+                    settings.Properties.EditFormatString = "dd/MM/yyyy hh:mm tt";
+                    settings.Properties.TimeSectionProperties.Visible = true;
+                    settings.Properties.TimeSectionProperties.TimeEditProperties.EditFormat = EditFormat.Custom;
+                    settings.Properties.TimeSectionProperties.TimeEditProperties.EditFormatString = "hh:mm tt";
+                    //settings.Date = DateTime.Now;
+                    settings.Width = Unit.Percentage(100);
+                }).GetHtml()
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Фактический срок конца
+                </td>
+                <td>
+                    @Html.DevExpress().DateEdit(
+                settings =>
+                {
+                    settings.Name = "actualEndTermDateEdit";
+                    settings.Properties.UseMaskBehavior = true;
+                    settings.Properties.EditFormat = EditFormat.Custom;
+                    settings.Properties.EditFormatString = "dd/MM/yyyy hh:mm tt";
+                    settings.Properties.TimeSectionProperties.Visible = true;
+                    settings.Properties.TimeSectionProperties.TimeEditProperties.EditFormat = EditFormat.Custom;
+                    settings.Properties.TimeSectionProperties.TimeEditProperties.EditFormatString = "hh:mm tt";
+                    //settings.Date = DateTime.Now;
+                    settings.Width = Unit.Percentage(100);
+                }).GetHtml()
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Базисный срок начала
+                </td>
+                <td>
+                    @Html.DevExpress().DateEdit(
+                settings =>
+                {
+                    settings.Name = "basisStartTermDateEdit";
+                    settings.Properties.UseMaskBehavior = true;
+                    settings.Properties.EditFormat = EditFormat.Custom;
+                    settings.Properties.EditFormatString = "dd/MM/yyyy hh:mm tt";
+                    settings.Properties.TimeSectionProperties.Visible = true;
+                    settings.Properties.TimeSectionProperties.TimeEditProperties.EditFormat = EditFormat.Custom;
+                    settings.Properties.TimeSectionProperties.TimeEditProperties.EditFormatString = "hh:mm tt";
+                    //settings.Date = DateTime.Now;
+                    settings.Width = Unit.Percentage(100);
+                }).GetHtml()
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Материал
+                </td>
+                <td>
+                    @Html.Action("MaterInputGridLookupPartial")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Табельный номер
+                </td>
+                <td>
+                    @Html.Action("GridLookupPartial", "Home")
+                </td>
+            </tr>
+        </table>        
+        <table class="popup__table_mid">
+            <tr>
+                <td>
+                    
+                    @Html.DevExpress().CheckBox(settings =>
+               {
+                   settings.Name = "confirmedOperationsCheckBox";
+                   settings.Text = "  Подтверждённые операции";
+               }).GetHtml()
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DevExpress().CheckBox(settings =>
+               {
+                   settings.Name = "notConfirmedOperationsCheckBox";
+                   settings.Text = "  Неподтверждённые / частично подтверждённые операции";
+               }).GetHtml()
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table class="popup__table_bot">
+            <tr>
+                <td align="center" style="padding: 20px 0px 10px 50px;"><a href="#" class="button tick"></a></td>
+                <td align="center" style="padding: 20px 50px 10px 350px;"><a href="#" class="button cross"></a></td>
+            </tr>
+        </table>
+    </div>
+
+@section Scripts {
+
+    <script type="text/javascript">
+        p = $('.popup__overlay')
+        $('#popup__toggle').click(function () {
+            p.css('display', 'block')
+        })
+        p.click(function (event) {
+            e = event || window.event
+            if (e.target == this) {
+                $(p).css('display', 'none')
+            }
+        })
+        $('.popup__submit').click(function () {
+            p.css('display', 'none')
+        })
+        $('.popup__cancel').click(function () {
+            p.css('display', 'none')
+        })
+        function bigImg(x) {
+            x.style.height = "60px";
+            x.style.width = "60px";
+        }
+
+        function normalImg(x) {
+            x.style.height = "50px";
+            x.style.width = "50px";
+        }
+    </script>}

@@ -1,0 +1,81 @@
+﻿
+@{
+    var grid = Html.DevExpress().GridView(settings =>
+    {
+        settings.Name = "GridViewTotalList";
+        settings.CallbackRouteValues = new { Controller = "Dialog", Action = "GridViewPartialView" };
+
+
+        settings.KeyFieldName = "Matnr";
+
+        settings.SettingsPager.Visible = true;
+        settings.Settings.ShowGroupPanel = false;
+        settings.Settings.ShowFilterRow = false;
+        settings.SettingsBehavior.AllowSelectByRowClick = true;
+        settings.Settings.HorizontalScrollBarMode = ScrollBarMode.Visible;
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Fio";
+            c.Caption = "ФИО/Итого";
+            c.Width = 200;
+            c.CellStyle.Font.Size = 10;
+            c.Visible = true;
+        });
+        foreach (var col in (List<SSZ.Models.SetTab>)ViewBag.PrimeGrid)
+        {
+
+            if (col.Name!="Fio")
+                settings.Columns.Add(c =>
+                {
+                    c.FieldName = col.Name;
+                    c.Caption = col.Description;
+                    c.Width = col.width;
+                    c.CellStyle.Font.Size = col.fontSize;
+                    c.Visible = col.visibleCol;
+                });
+        }
+
+
+
+        //устанавливаем цвет строк в соотвествии статуса
+        settings.HtmlRowPrepared = (c, e) =>
+        {
+            if (Convert.ToString(e.GetValue("LineColor")) == "C600")
+            {
+
+                e.Row.BackColor = System.Drawing.Color.FromArgb(230, 154, 156);
+
+            }
+            else if (Convert.ToString(e.GetValue("LineColor")) == "C310")
+            {
+
+                e.Row.BackColor = System.Drawing.Color.FromArgb(233, 202, 148 );
+
+            }
+            else if (Convert.ToString(e.GetValue("LineColor")) == "C511")
+            {
+
+                e.Row.BackColor = System.Drawing.Color.FromArgb(1, 149, 1);
+
+            }
+
+        };
+
+
+
+        settings.Width = Unit.Percentage(100);
+        settings.SettingsSearchPanel.CustomEditorName = "SearchTab1";
+        settings.Styles.Header.BackgroundImage.ImageUrl = "/Content/Images/hidden.png";
+        settings.Styles.Header.BackColor = System.Drawing.ColorTranslator.FromHtml("#024c97");
+        settings.Styles.Header.ForeColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+        settings.Styles.Header.CssClass = "headerTab";
+        settings.Styles.AlternatingRow.Enabled = DefaultBoolean.True;
+        settings.Styles.AlternatingRow.BackColor = System.Drawing.ColorTranslator.FromHtml("#c1c1c1");
+        settings.Styles.Row.Font.Bold = true;
+        settings.Settings.VerticalScrollBarMode = ScrollBarMode.Visible;
+        // settings.Settings.VerticalScrollableHeight = 300;
+        settings.SettingsPager.Mode = GridViewPagerMode.ShowAllRecords;
+    });
+
+}
+@grid.Bind(Model).GetHtml()

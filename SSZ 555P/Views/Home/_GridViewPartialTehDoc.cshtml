@@ -1,0 +1,79 @@
+﻿@{
+    var grid = Html.DevExpress().GridView(settings =>
+    {
+        settings.Name = "GridViewTehDoc";
+        settings.CallbackRouteValues = new { Controller = "Home", Action = "GridViewPartialTehDoc" };
+
+
+        settings.KeyFieldName = "Id";
+        settings.SettingsPager.Visible = true;
+        settings.Settings.ShowGroupPanel = false;
+        settings.Settings.ShowFilterRow = false;
+        settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Id";
+            c.Caption = "Id";
+            c.Width = 60;
+            c.Visible = false;
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Dappl";
+            c.Caption = "Формат";
+            c.Width = 150;
+            c.Visible = true;
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "N";
+            c.Caption = "Наименование";
+            c.Width = 500;
+            c.Visible = true;
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Url";
+            c.Caption = "URL";
+            c.Width = 100;
+            c.Visible = true;
+            c.ColumnType = MVCxGridViewColumnType.HyperLink;
+            HyperLinkProperties pr = c.PropertiesEdit as HyperLinkProperties;
+            pr.Target = "_blank";
+            pr.Text = "Просмотр";
+            pr.Style.ForeColor = System.Drawing.ColorTranslator.FromHtml("#2a2a2a");
+            pr.Style.Font.Bold = true;
+            pr.Style.Font.Size = 9;
+            c.CellStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#000000");
+        });
+
+
+        settings.HtmlDataCellPrepared = (sender, e) =>
+        {
+            if (e.DataColumn.FieldName == "Url")
+            {
+
+                if (Convert.ToString(e.GetValue("Url")) == "")
+                {
+
+                    e.Cell.Text = "";
+                }
+            }
+        };
+
+        settings.Width = 800;
+        settings.Styles.Header.BackgroundImage.ImageUrl = "/Content/Images/hidden.png";
+        settings.Styles.Header.BackColor = System.Drawing.ColorTranslator.FromHtml("#024c97");
+        settings.Styles.Header.ForeColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+        settings.Styles.Header.CssClass = "headerTab";
+        settings.Styles.AlternatingRow.Enabled = DefaultBoolean.True;
+        settings.Styles.AlternatingRow.BackColor = System.Drawing.ColorTranslator.FromHtml("#c1c1c1");
+        settings.Styles.Row.Font.Bold = true;
+        settings.Settings.VerticalScrollBarMode = ScrollBarMode.Visible;
+        settings.Settings.HorizontalScrollBarMode = ScrollBarMode.Visible;
+        // settings.Settings.VerticalScrollableHeight = 300;
+        settings.SettingsPager.Mode = GridViewPagerMode.EndlessPaging;
+    });
+}
+@grid.Bind(Model).GetHtml()

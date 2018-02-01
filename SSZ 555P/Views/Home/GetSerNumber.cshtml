@@ -1,0 +1,60 @@
+﻿@model IEnumerable<SSZ.GetOperDetail.YsfcOperDetailSenWs>
+@{
+    Layout = null;
+    int i = 1;
+}
+
+<table class="table5" id="tbSerN" style="margin-top:0px;">
+    <tr>
+        <th>
+           Инфо
+        </th>
+        <th>
+           Материал
+        </th>
+        <th>
+           Серийный номер
+        </th>
+        <th>
+            Выбор
+        </th>
+        <th>
+           Информация
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    i++;
+    <tr>
+        <td>
+            @if (item.Diaty != null && item.Diaty != "")
+            {
+            <div id="prtE"><span>  @Html.DisplayFor(modelItem => item.Diaty)</span></div>
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Matnr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sernr)
+        </td>
+        <td>
+            @if (item.Diaty != "E")
+            {
+              if (item.Kzebu != null && item.Kzebu != "")
+            {
+              <input type="checkbox" checked name="Kzebu" id="Kzebu" onclick='CheckChange(@i)' />
+            }
+            else
+            {
+                <input type="checkbox"  name="Kzebu" id="Kzebu" onclick='CheckChange(@i)' />
+            }
+            }
+        </td>
+        <td style="font-size:10px;">
+            @Html.DisplayFor(modelItem => item.DiacoTxt)
+        </td>
+    </tr>
+}
+
+</table>

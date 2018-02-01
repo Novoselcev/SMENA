@@ -1,0 +1,38 @@
+﻿@model SSZ.PutNotification.YsfcOperQnoticeWs
+@{
+  System.Data.DataTable Coord1 = (System.Data.DataTable)ViewData["Coord"];
+}
+
+@if (ViewData["Coord"] != null)
+{
+    @Html.DevExpress().ComboBox(
+    settings =>
+    {
+        settings.Name = "Coord";
+        settings.SelectedIndex = 0;
+        settings.Properties.DropDownWidth = 400;
+        settings.Properties.DropDownStyle = DropDownStyle.DropDownList;
+        settings.Properties.CallbackPageSize = 30;
+        settings.Properties.IncrementalFilteringMode = IncrementalFilteringMode.Contains;
+        settings.Properties.TextFormatString = "{0} - {1} {2}";
+        settings.Properties.ValueField = "Coord";
+     //   settings.Properties.TextField = "Coord";
+        settings.Properties.ListBoxStyle.CssClass = "comStyle";
+        //       settings.Properties.ClientSideEvents.SelectedIndexChanged
+        //         = "onComboBoxFegrpChanged";
+        settings.PreRender = (sender, e) =>
+        {
+            MVCxComboBox cmb = sender as MVCxComboBox;
+            if (Model.Coord == null || Model.Coord == "")
+                cmb.Value = "Выберите коорд.";
+            else cmb.Value = Model.Coord;
+
+        };
+        settings.Properties.ValueType = typeof(string);
+        foreach (System.Data.DataColumn col in Coord1.Columns)
+        {
+            settings.Properties.Columns.Add(col.ColumnName, col.Caption, col.MaxLength);
+        }
+    }
+             ).BindList(ViewData["Coord"]).GetHtml()
+}

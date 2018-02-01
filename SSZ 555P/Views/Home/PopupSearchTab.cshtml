@@ -1,0 +1,25 @@
+﻿@Html.DevExpress().PopupControl(settings =>
+{
+    settings.Name = "PopupControl1";
+    settings.AllowResize = true;
+    settings.ShowOnPageLoad = false;
+    settings.AllowDragging = true;
+    settings.CloseAction = CloseAction.CloseButton;
+    settings.CloseOnEscape = true;
+    settings.Modal = true;
+    settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+    settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
+    settings.Styles.Content.BackgroundImage.ImageUrl = "~/Content/Images/TransparentBackground.png";
+    settings.HeaderText = "";
+    settings.Styles.Header.BackgroundImage.ImageUrl = null;
+    settings.Styles.Header.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+    settings.PopupElementID = "searchTab";
+    settings.SetHeaderContentTemplateContent(content =>
+    {
+        ViewContext.Writer.Write("<div class='searchTabHeader'>ПОДТВЕРЖДЕНИЕ ОПЕРАЦИЙ</div>");
+    });
+    settings.SetContent(() =>
+    {
+        Html.RenderPartial("UserInputData", null);
+    });
+}).GetHtml()

@@ -1,0 +1,32 @@
+@{
+    var gridLookup = Html.DevExpress().GridLookup(settings => {
+        settings.Name = "WorkPlaceInputGridLookup";
+        settings.KeyFieldName = "workPlaceCRHD";
+
+        settings.GridViewProperties.CallbackRouteValues = new { Controller = "Home", Action = "WorkPlaceInputGridLookupPartial" };
+        settings.Properties.SelectionMode = GridLookupSelectionMode.Single;
+        settings.Properties.TextFormatString = "{0}";
+
+
+        settings.GridViewProperties.SettingsPager.Visible = true;
+        settings.GridViewProperties.Settings.ShowGroupPanel = false;
+        settings.GridViewProperties.Settings.ShowFilterRow = false;
+        settings.Width = Unit.Percentage(100);
+
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "workPlaceCRHD";
+            c.Caption = "Номер рабочего места";
+            c.Width = 60;
+
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "workPlaceDescrCRTX";
+            c.Caption = "Описание рабочего места";
+            c.Width = 120;
+
+        });
+    });
+}
+@gridLookup.BindList(Model).GetHtml()

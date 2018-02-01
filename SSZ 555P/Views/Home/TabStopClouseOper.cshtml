@@ -1,0 +1,69 @@
+﻿@{
+    Layout = null;
+    bool vis = false;
+    if (ViewBag.SerMumber != null && ViewBag.SerMumber == true)
+    {
+        vis = true;
+    }
+
+}
+<script type="text/javascript" src="~/Scripts/jquery-ui.min.js"></script>
+
+
+@Html.DevExpress().PageControl(settings =>
+{
+    settings.Name = "TabControlStopClouse";
+    // settings.ActiveTabIndex = Convert.ToInt32(ViewBag.pageID);
+    settings.Styles.Content.Border.BorderColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+    settings.Styles.Content.Border.BorderStyle = BorderStyle.Solid;
+    settings.Styles.Content.BackColor = System.Drawing.ColorTranslator.FromHtml("#2a2a2a");
+    settings.Styles.Content.BackgroundImage.ImageUrl = "/Content/Images/hidden.png"; ;
+    settings.Height = Unit.Percentage(100);
+    settings.Width = 645;
+    settings.TabPages.Add(tab =>
+    {
+        tab.Name = "Tab 0";
+        tab.Text = "Общие";
+        tab.TabStyle.Font.Size = 14;
+        tab.ActiveTabStyle.Border.BorderColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+        tab.TabStyle.BackgroundImage.ImageUrl = "none";
+        tab.TabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+        tab.TabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#aaaaaa");
+        tab.ActiveTabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#2a2a2a");
+        tab.ActiveTabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#FFFFFF");
+        tab.SetContent(() =>
+        {
+            Html.RenderAction("UserConfirmOperation");
+            // ViewContext.Writer.Write("<span id='subOperationsTab'></span>");
+        });
+
+
+    });
+    if (vis)
+    {
+        settings.TabPages.Add(tab =>
+        {
+            tab.Name = "Tab 1";
+            tab.Text = "Серийные номера";
+            tab.TabStyle.Font.Size = 14;
+            tab.ActiveTabStyle.Border.BorderColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+            tab.TabStyle.BackgroundImage.ImageUrl = "none";
+            tab.TabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+            tab.TabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#aaaaaa");
+            tab.ActiveTabStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#2a2a2a");
+            tab.ActiveTabStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#FFFFFF");
+
+            tab.SetContent(() =>
+            {
+
+                Html.RenderAction("GetSerNumber");
+
+            });
+
+
+        });
+    }
+
+
+
+}).GetHtml()

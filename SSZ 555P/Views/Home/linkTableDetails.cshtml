@@ -1,0 +1,10 @@
+﻿<div style='padding:7px 0 12px 75px;'>
+   @Html.ActionLink("Подоперации", "", null, new { href = "javascript:OnHyperLinkClick('" + ViewBag.ObjId + "','" + ViewBag.Asszl + "','0');", @class = "buttomAct" })
+   @Html.ActionLink("Нормативная документация", "", null, new { href = "javascript:OnHyperLinkClick('" + ViewBag.ObjId + "','" + ViewBag.Asszl + "','1');", @class = "buttomAct" })
+   @Html.ActionLink("Компоненты", "", null, new { href = "javascript:OnHyperLinkClick('" + ViewBag.ObjId + "','" + ViewBag.Asszl + "','2');", @class = "buttomAct" })
+   @Html.ActionLink("ВПС", "", null, new { href = "javascript:OnHyperLinkClick('" + ViewBag.ObjId + "','" + ViewBag.Asszl + "','3');", @class = "buttomAct" })
+   
+    @if (ViewBag.SerNomer) { 
+       @Html.ActionLink("Серийные номера", "", null, new { href = "javascript:OnHyperLinkClick('" + ViewBag.ObjId + "','" + ViewBag.Asszl + "','4');", @class = "buttomAct" })
+    }
+</div>

@@ -1,0 +1,193 @@
+﻿@model IEnumerable<SSZ.Models.SetTab>
+
+
+
+@{
+    var grid = Html.DevExpress().GridView(settings =>
+    {
+        settings.Name = "GridViewDoc";
+        settings.CallbackRouteValues = new { Controller = "Home", Action = "GridViewPartialDoc" };
+
+
+        settings.KeyFieldName = "documentNumberDRAW";
+
+        settings.SettingsPager.Visible = true;
+        settings.Settings.ShowGroupPanel = false;
+        settings.Settings.ShowFilterRow = false;
+        settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+
+
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Name";
+            c.Caption = "Yfbv";
+            c.Width = 60;
+            c.Visible = false;
+        });
+
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "documentNumberDRAW";
+            c.Caption = "Номер док.";
+            c.Width = 60;
+            c.CellStyle.Font.Size = 9;
+        });
+
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "DocTXT";
+            c.Caption = "Наименование";
+            c.Width = 160;
+            c.CellStyle.Font.Size = 8;
+        });
+
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "TypeDoc";
+            c.Caption = "Название док.";
+            c.Width = 150;
+            c.CellStyle.Font.Size = 8;
+        });
+
+
+
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "documentTypeDRAW";
+            c.Caption = "Тип";
+            c.Width = 40;
+
+        });
+
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "documentVersionDRAW";
+            c.Caption = "Верс.";
+            c.Width = 40;
+            c.CellStyle.Font.Size = 10;
+        });
+
+
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Type";
+            c.Caption = "Тип";
+            c.Width = 20;
+            c.CellStyle.Font.Size = 10;
+            c.Visible = false;
+        });
+
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "URL";
+            c.Width = 60;
+            c.Caption = "URL";
+            c.ColumnType = MVCxGridViewColumnType.HyperLink;
+            HyperLinkProperties pr = c.PropertiesEdit as HyperLinkProperties;
+            pr.Target = "_blank";
+            pr.Text = "Просмотр";
+            pr.Style.ForeColor = System.Drawing.ColorTranslator.FromHtml("#2a2a2a");
+            pr.Style.Font.Bold = true;
+            pr.Style.Font.Size = 9;
+            c.CellStyle.ForeColor = System.Drawing.ColorTranslator.FromHtml("#000000");
+        });
+
+        settings.HtmlDataCellPrepared = (sender, e) =>
+        {
+            if (e.DataColumn.FieldName == "URL")
+            {
+
+                if (Convert.ToString(e.GetValue("URL")) == "")
+                {
+
+                    e.Cell.Text = "";
+                }
+            }
+
+
+            if (e.DataColumn.FieldName == "imageICON")
+            {
+                if (Convert.ToString(e.GetValue("imageICON")) == "PDF")
+                {
+                    e.Cell.Text = "<div style = 'text-align:center;'><img height='30px' src='/Content/Images/FileTypesIcons/pdf.png' /></div>";
+                }
+                else if (Convert.ToString(e.GetValue("imageICON")) == "DOC")
+                {
+                    e.Cell.Text = "<div style = 'text-align:center;'><img height='30px' src='/Content/Images/FileTypesIcons/doc.png' /></div>";
+                }
+                else if (Convert.ToString(e.GetValue("imageICON")) == "XLS")
+                {
+                    e.Cell.Text = "<div style = 'text-align:center;'><img height='30px' src='/Content/Images/FileTypesIcons/xls.png' /></div>";//54654654
+                }
+                else
+                {
+
+                }
+            }
+        };
+
+        settings.Width = 800;
+        settings.Styles.Header.BackgroundImage.ImageUrl = "none";
+        settings.Styles.Header.BackColor = System.Drawing.ColorTranslator.FromHtml("#024c97");
+        settings.Styles.Header.ForeColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+        settings.Styles.Header.CssClass = "headerTab";
+        settings.Styles.AlternatingRow.Enabled = DefaultBoolean.True;
+        settings.Styles.AlternatingRow.BackColor = System.Drawing.ColorTranslator.FromHtml("#c1c1c1");
+        settings.Styles.Row.Font.Bold = true;
+        settings.Settings.VerticalScrollBarMode = ScrollBarMode.Visible;
+        // settings.Settings.VerticalScrollableHeight = 300;
+        settings.SettingsPager.Mode = GridViewPagerMode.EndlessPaging;
+    });
+}
+@grid.Bind(Model).GetHtml()
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.visibleCol)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.position)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.width)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.visibleCol)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.position)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.width)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

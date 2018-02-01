@@ -1,0 +1,63 @@
+﻿@model SSZ.PUT_OPERATION_TICKET.YsfcOperConfirmWs
+<div class="popup__main">
+        <div style="background-color:#1a1a1a;border: 1px solid #6d6d6d; border-top: none; padding: 20px;">
+            <table class="popup__table_confirm">
+                <tr>
+                    <td width="250px">
+                        Операция
+                    </td>
+                    <td width="100px">@Model.Vornr</td>
+                </tr>
+                <tr>
+                    <td>
+                        Подтверждение вых. прод., @Model.Meinh
+                    </td>
+                    <td style="padding: 0px;">
+                        @Html.TextBoxFor(m => m.Lmnga)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Рабочее время для под., @Model.Ile03.
+                    </td>
+                    <td>@Model.Ism03</td>
+                </tr>
+                <tr style="display:none">
+                    <td>
+                        Табельный номер
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        Дата и время подтверждения
+                    </td>
+                    <td>@Model.Ldate  @Model.Ltime</td>
+                </tr>
+                <tr id="braktr">
+                    <td>
+                        Брак, @Model.Meinh
+                    </td>
+                    <td style="padding: 0px;">
+                        @Html.TextBoxFor(m => m.Xmnga, ViewBag.Disabled ? (object) new { disabled= "disabled" }: new { })
+                    </td>
+                </tr>
+                <tr>
+                </tr>
+            </table>
+            <table style="width: 100%;" class="tabarea">
+                <tr>
+                    <td align="left" style="padding: 20px 0px 10px 0px; color: white; font-size: 14px;">Примечание</td>
+                </tr>
+                <tr>
+                    <td>
+                    
+                       @Html.TextAreaFor(x=>x.Ltxa1)
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+
+

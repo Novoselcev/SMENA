@@ -1,0 +1,45 @@
+<div class="headerTop" style="background-color:#444444">
+    <div class="HeaderSearch">
+        <img id="logoImg"  src="~/Content/Images/buttom/logotop.PNG" />
+        <div class="txtser">
+            @Html.DevExpress().TextBox(settings =>
+       {
+           settings.Name = "SearchTab";
+
+           Unit.Percentage(100);
+       }).GetHtml()
+            <img id="loopI" src="~/Content/Images/buttom/loop.PNG" />
+        </div>
+
+    </div>
+    <div class="loginControl">
+        @Html.Partial("LogOnPartialView")
+    </div>
+   
+    <div class="headerAct">
+        <div class="headerButtom">
+            <div class="butpad" data-title="Запуск"><a><div id="butSt"></div></a></div>
+            <div class="butpad" data-title="Пауза"><a><div id="butP"></div></a></div>
+            <div class="butpad" data-title="Остановить работу"><a><div id="butStop"></div></a></div>
+            <div class="butpad" data-title="Завершить работу"><a><div id="butClose"></div></a></div>
+        </div>
+
+           <div class="headerButtomAct">
+             <div class="butpad" data-title="Подробнее о операции"><a><div id="butdoc"></div></a></div>
+              <!--<div class="butpad"><a href="javascript:onlineRefresh()"><div id="butmes"></div></a></div>
+          <div class="butpad">
+                 <a href=""><div id="butgraf"></div></a>
+             </div>-->
+               <div class="butpad" data-title="Статистика по операциям"><a><div id="butL"></div></a></div>
+               <div class="butpad" data-title="Сообщение о несоотвествии"><a><div id="butj"></div></a></div>
+         </div> 
+
+        <div class="headerButtomAct">
+            <div class="butpad" data-title="Обновить таблицу"><a href="javascript:rereshGrid();"><div id="butref"></div></a></div>
+        </div>
+
+        <div class="headerButtomClose">
+            <div class="butpad" data-title="Выход"><a href="/Home/LogOff"><div id="butexit"></div></a></div>
+        </div>
+    </div>
+</div>

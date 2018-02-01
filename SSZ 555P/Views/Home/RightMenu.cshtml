@@ -1,0 +1,16 @@
+﻿
+@Html.DevExpress().Panel(set =>
+{
+    set.Name = "BottomPanel";
+    set.FixedPosition = PanelFixedPosition.WindowRight;
+    set.Width = Unit.Percentage(100);
+    // set.SettingsAdaptivity.CollapseAtWindowInnerHeight = 580;
+    set.Styles.Panel.Paddings.Padding = Unit.Pixel(15);
+    set.Styles.Panel.BackColor = System.Drawing.ColorTranslator.FromHtml("#555555");
+   set.Collapsible = true;
+    // set.SettingsAdaptivity.CollapseAtWindowInnerWidth = 900;
+    set.SetContent(() =>
+    {
+        Html.RenderPartial("SettingPanel", null);
+    });
+}).GetHtml()

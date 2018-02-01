@@ -1,0 +1,19 @@
+﻿<div class="popup__main">
+    <div style="background-color:#1a1a1a; border: 1px solid #6d6d6d; border-top: none; padding: 20px;">
+        @Html.Action("ShortageGridViewPartial")
+    </div>
+    <br />   
+    <div style="background-color: red; color: white; padding: 10px;">
+        <table style="margin-left: 40px;">
+            <tr>
+                <td style="width: 60px; padding: 10px 50px;">
+                    <img src="~/Content/Images/caution-sign-white-50px.png" />
+                </td>
+                <td style="padding: 10px; font-size: 14px; line-height: 1.4em;">
+                    Операция не может быть начата<br>
+                    пока есть дефицитные материалы!
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

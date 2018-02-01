@@ -1,0 +1,58 @@
+
+
+@{
+    var grid = Html.DevExpress().GridView(settings => {
+        settings.Name = "GridViewComp";
+        settings.CallbackRouteValues = new { Controller = "Home", Action = "GridView1PartialComp" };
+
+
+        settings.KeyFieldName = "Matnr";
+
+        settings.SettingsPager.Visible = true;
+        settings.Settings.ShowGroupPanel = false;
+        settings.Settings.ShowFilterRow = false;
+        settings.SettingsBehavior.AllowSelectByRowClick = true;
+        settings.Settings.HorizontalScrollBarMode = ScrollBarMode.Visible;
+        foreach (var col in (List<SSZ.Models.SetTab>)ViewBag.GridComp)
+        {
+            settings.Columns.Add(c =>
+            {
+                c.FieldName = col.Name;
+                c.Caption = col.Description;
+                c.Width = col.width;
+                c.CellStyle.Font.Size = col.fontSize;
+                c.Visible = col.visibleCol;
+            });
+        }
+
+
+
+        //устанавливаем цвет строк в соотвествии статуса
+        settings.HtmlRowPrepared = (c, e) =>
+        {
+            if (Convert.ToString(e.GetValue("Xfehl")) != "")
+            {
+
+                e.Row.BackColor = System.Drawing.Color.FromArgb(230, 154, 156);
+
+            }
+
+        };
+
+
+
+        settings.Width = 800;
+        settings.Styles.Header.BackgroundImage.ImageUrl = "/Content/Images/hidden.png";
+        settings.Styles.Header.BackColor = System.Drawing.ColorTranslator.FromHtml("#024c97");
+        settings.Styles.Header.ForeColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+        settings.Styles.Header.CssClass = "headerTab";
+        settings.Styles.AlternatingRow.Enabled = DefaultBoolean.True;
+        settings.Styles.AlternatingRow.BackColor = System.Drawing.ColorTranslator.FromHtml("#c1c1c1");
+        settings.Styles.Row.Font.Bold = true;
+        settings.Settings.VerticalScrollBarMode = ScrollBarMode.Visible;
+        // settings.Settings.VerticalScrollableHeight = 300;
+        settings.SettingsPager.Mode = GridViewPagerMode.EndlessPaging;
+    });
+
+}
+@grid.Bind(Model).GetHtml()

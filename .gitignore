@@ -7,6 +7,17 @@
 *.userosscache
 *.sln.docstates
 
+/Web.Debug.config
+/Web.Release.config
+/Web.config
+/LibService/WebServiceCH.cs
+
+/SSZ 555P/Web.Debug.config
+/SSZ 555P/Web.Release.config
+/SSZ 555P/Web.config
+/SSZ 555P/LibService/WebServiceCH.cs
+
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
@@ -244,3 +255,4 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+

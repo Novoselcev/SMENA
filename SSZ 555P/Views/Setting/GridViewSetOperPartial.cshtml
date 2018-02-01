@@ -1,0 +1,143 @@
+﻿@model IEnumerable<SSZ.Models.SetTab>
+
+@{
+    var grid = Html.DevExpress().GridView(settings =>
+    {
+        settings.Name = "GridViewSetOper";
+        settings.CallbackRouteValues = new { Controller = "Setting", Action = "GridViewSetOperPartial" };
+        //  settings.CustomActionRouteValues = new { Controller = "Setting", Action = "GridViewSetOperPartial" };
+        settings.SettingsEditing.BatchUpdateRouteValues = new { Controller = "Setting", Action = "GridViewSetOperEdit" };
+
+
+        settings.KeyFieldName = "position";
+
+        settings.SettingsPager.Visible = true;
+        settings.Settings.ShowGroupPanel = false;
+        settings.Settings.ShowFilterRow = false;
+        settings.SettingsBehavior.AllowSelectByRowClick = true;
+
+        settings.Columns.Add(c =>
+        {
+            c.Width = 120;
+
+            c.FieldName = "position";
+            c.EditFormSettings.Visible = DefaultBoolean.False;
+            // c.ReadOnly = true;
+            c.Caption = "Позиция";
+
+            /*  c.SetDataItemTemplateContent((s) =>
+              {
+                  ViewContext.Writer.Write(string.Format("<span style='padding: 0px 7px;' data-id='{0}' onclick=\"OnUpButtonClick();\"><img src='/Content/Images/buttom/bUP.png' /></span><span class=\"glyphicon glyphicon-folder-open\" data-id='{0}' onclick=\"OnDownButtonClick();\"><img src='/Content/Images/buttom/bDown.png' /></span>", s.KeyValue));
+
+              });*/
+        });
+
+        settings.Columns.Add(c =>
+        {
+            c.EditFormSettings.Visible = DefaultBoolean.False;
+            c.FieldName = "Description";
+            c.Caption = "Описание";
+            c.Width = 250;
+
+            //   c.CellStyle.Font.Size = 9;
+        });
+
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "Name";
+            c.EditFormSettings.Visible = DefaultBoolean.False;
+            c.Caption = "Наименование поля";
+            c.Width = 200;
+
+        });
+
+
+
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "width";
+            c.Caption = "Ширина";
+            c.Width = 100;
+            c.ColumnType = MVCxGridViewColumnType.SpinEdit;
+            c.PropertiesEdit.Style.HorizontalAlign = System.Web.UI.WebControls.HorizontalAlign.Right;
+            var textBoxProperties = c.PropertiesEdit as SpinEditProperties;
+
+            textBoxProperties.MaxValue = 500;
+            textBoxProperties.MinValue = 20;
+            textBoxProperties.NumberType = SpinEditNumberType.Integer;
+            textBoxProperties.Style.HorizontalAlign = System.Web.UI.WebControls.HorizontalAlign.Right;
+
+
+        });
+
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "visibleCol";
+            c.Caption = "Видимость";
+            c.ColumnType = MVCxGridViewColumnType.CheckBox;
+            c.Width = 100;
+            c.CellStyle.Font.Size = 8;
+        });
+
+
+        settings.BeforeGetCallbackResult = (s, e) =>
+        {
+            if (ViewBag.FocusedRowIndex == null)
+                return;
+            /*
+
+             var g = s as MVCxGridView;
+             int row = ViewBag.FocusedRowIndex;
+             g.FocusedRowIndex = row;
+             g.Selection.SelectRow(row);*/
+            // g.Selection.SetSelection =  ;
+            var g = s as MVCxGridView;
+            g.FocusedRowIndex = ViewBag.FocusedRowIndex;
+        };
+
+      /*  settings.HtmlDataCellPrepared = (sender, e) =>
+        {
+            var g = sender as MVCxGridView;
+            if (e.DataColumn.FieldName == "position") {
+
+                if (e.DataColumn.FieldName == "position" && e.VisibleIndex == g.FocusedRowIndex)
+                {
+                    e.Cell.Text = "<span style='padding: 7px 7px;'  onclick=\"OnUpButtonClick();\"><img src='/Content/Images/buttom/bUP.png' /></span><span <span style='padding: 7px 7px;' class=\"glyphicon glyphicon-folder-open\"  onclick=\"OnDownButtonClick();\"><img src='/Content/Images/buttom/bDown.png' /></span>";
+
+                }
+                else { e.Cell.Text = "<span style='padding: 16px 7px;'/>" + (e.VisibleIndex + 1).ToString() + "</span>"; }
+            }
+        };*/
+
+        settings.SettingsEditing.Mode = GridViewEditingMode.Batch;
+        settings.SettingsEditing.BatchEditSettings.EditMode = GridViewBatchEditMode.Cell;
+        settings.SettingsEditing.BatchEditSettings.StartEditAction = GridViewBatchStartEditAction.Click;
+        settings.SettingsEditing.BatchEditSettings.ShowConfirmOnLosingChanges = false;
+        settings.Settings.ShowStatusBar = GridViewStatusBarMode.Hidden;
+
+        settings.Styles.Header.BackgroundImage.ImageUrl = "/Content/Images/hidden.png";
+        settings.Styles.Header.BackColor = System.Drawing.ColorTranslator.FromHtml("#024c97");
+        settings.Styles.Header.ForeColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+        settings.Styles.Header.CssClass = "headerTab";
+        settings.Styles.AlternatingRow.Enabled = DefaultBoolean.True;
+        settings.Styles.AlternatingRow.BackColor = System.Drawing.ColorTranslator.FromHtml("#c1c1c1");
+        settings.Styles.Row.Font.Bold = true;
+        settings.Settings.VerticalScrollBarMode = ScrollBarMode.Visible;
+
+       settings.Settings.VerticalScrollableHeight = 500;
+      //  settings.SettingsAdaptivity.AdaptivityMode = GridViewAdaptivityMode.HideDataCells;
+    //    settings.SettingsAdaptivity.AllowOnlyOneAdaptiveDetailExpanded = true;
+     //   settings.Settings.VerticalScrollBarStyle = GridViewVerticalScrollBarStyle.VirtualSmooth;
+
+        //      settings.SettingsPager.Mode = GridViewPagerMode.EndlessPaging;
+        settings.Styles.FocusedRow.CssClass = "FocusTR";
+        settings.Styles.FocusedRow.BackColor = System.Drawing.Color.FromArgb(3, 95, 170);
+        settings.Styles.FocusedRow.ForeColor = System.Drawing.Color.White;
+        settings.SettingsBehavior.AllowFocusedRow = true;
+      //  settings.ClientSideEvents.FocusedRowChanged = "FocusGridViewSetOper";
+     //   settings.ClientSideEvents.BatchEditConfirmShowing= "ValidGridViewSetOper";
+
+    });
+}
+@grid.Bind(Model).GetHtml()
+

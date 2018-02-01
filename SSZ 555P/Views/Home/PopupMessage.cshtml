@@ -1,0 +1,27 @@
+﻿@Html.DevExpress().PopupControl(settings =>
+{
+    settings.CallbackRouteValues = new { Controller = "Home", Action = "PopupMessage" };
+    settings.Name = "PopupMessage";
+    settings.AllowResize = false;
+    settings.ShowHeader = true;
+    settings.ShowOnPageLoad = false;
+    settings.AllowDragging = true;
+    settings.CloseOnEscape = true;
+    settings.Modal = true;
+    settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+    settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
+    settings.Styles.Content.BackgroundImage.ImageUrl = "~/Content/Images/TransparentBackground.png";
+    settings.HeaderText = "";
+    settings.Styles.Header.BackgroundImage.ImageUrl = null;
+    settings.Styles.Header.BackColor = System.Drawing.ColorTranslator.FromHtml("#1a1a1a");
+    settings.PopupElementID = "MessageTab";
+    settings.ClientSideEvents.BeginCallback = "OnMessage";
+    settings.SetHeaderContentTemplateContent(content =>
+    {
+        ViewContext.Writer.Write("<div class='confirmTabHeader'></div>");
+    });
+    settings.SetContent(() =>
+    {
+        Html.RenderAction("UserMessage");
+    });
+}).GetHtml()

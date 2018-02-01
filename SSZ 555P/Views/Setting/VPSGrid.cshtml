@@ -1,0 +1,60 @@
+﻿
+@model IEnumerable<SSZ.Models.SetTab>
+<div class="ButAct">
+    <a id="save9">Сохранить</a>
+    <a id="return9">Отмена</a>
+</div>
+<table class="table5" id="table9">
+    <thead>
+        <tr>
+            <th>
+                №
+            </th>
+            <th>
+                Имя
+            </th>
+            <th>
+                Описание
+            </th>
+            <th>
+                Ширина
+            </th>
+            <th>
+                Шрифт
+            </th>
+            <th>
+                Видимость
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.position)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td style="padding:0px !important;">
+                    @Html.TextBoxFor(modelItem => item.width, new { maxlength = 3 })
+                </td>
+                <td style="padding:0px !important;">
+                    @Html.TextBoxFor(modelItem => item.fontSize, new { maxlength = 2 })
+
+                </td>
+                <td>
+                    @Html.CheckBoxFor(modelItem => item.visibleCol)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+

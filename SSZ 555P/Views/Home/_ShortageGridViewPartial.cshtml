@@ -1,0 +1,74 @@
+@{
+    var grid = Html.DevExpress().GridView(settings => {
+        settings.Name = "ShortageGridView";
+        settings.CallbackRouteValues = new { Controller = "Home", Action = "ShortageGridViewPartial" };
+
+
+        settings.KeyFieldName = "objectID";
+
+        settings.SettingsPager.Visible = false;
+        settings.Settings.ShowGroupPanel = false;
+        settings.Settings.ShowFilterRow = false;
+        settings.SettingsBehavior.AllowSelectByRowClick = false;
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "plant";
+            c.Caption = "Завод";
+            c.Width = 100;
+        });
+
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "warehouse";
+            c.Caption = "Склад";
+            c.Width = 100;
+        });
+
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "materialNumber";
+            c.Caption = "Материал";
+            c.Width = 100;
+        });
+
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "materialDescription";
+            c.Caption = "Наименование";
+            c.Width = 300;
+        });
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "demand";
+            c.Caption = "Потребность";
+            c.Width = 120;
+        });
+
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "shortage";
+            c.Caption = "Дефицит";
+            c.Width = 100;
+        });
+
+        settings.Columns.Add(c =>
+        {
+            c.FieldName = "measureUnit";
+            c.Caption = "ЕИ";
+            c.Width = 40;
+        });
+
+        settings.Styles.Header.BackgroundImage.ImageUrl = "none";
+        settings.Styles.Header.BackColor = System.Drawing.ColorTranslator.FromHtml("#024c97");
+        settings.Styles.Header.ForeColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+        settings.Styles.Header.CssClass = "headerTab";
+        settings.Styles.AlternatingRow.Enabled = DefaultBoolean.True;
+        settings.Styles.AlternatingRow.BackColor = System.Drawing.ColorTranslator.FromHtml("#c1c1c1");
+        settings.Styles.Row.Font.Bold = true;
+        settings.Settings.VerticalScrollBarMode = ScrollBarMode.Visible;
+        settings.Settings.VerticalScrollableHeight = 200;
+        //settings.SettingsPager.Mode = GridViewPagerMode.EndlessPaging;
+
+    });
+}
+@grid.Bind(Model).GetHtml()

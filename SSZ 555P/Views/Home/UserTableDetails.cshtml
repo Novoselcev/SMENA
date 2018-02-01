@@ -1,0 +1,85 @@
+﻿@model SSZ.GetOperDetail.YsfcOperListWs
+<div style="font-size: 20px; color: #fff; padding-bottom: 10px;">Описание операции</div>
+
+<table class="taboper">
+    <tr>
+        <td>Заказ</td>
+        <td>@Model.Aufnr</td>
+        <td>Выполн. продукция</td>
+        <td>@Model.Lmnga</td>
+    </tr>
+    <tr>
+        <td>Операция</td>
+        <td>@Model.Vornr</td>
+        <td>Брак</td>
+        <td>@Model.Xmnga</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>План кол-во</td>
+        <td>@Model.Mgvrg</td>
+    </tr>
+    
+    <tr>
+        <td>Наименование операции</td>
+        <td>@Model.Ltxa</td>
+        <td>Ед. изм.</td>
+        <td>@Model.Meinh</td>
+    </tr>
+    <tr>
+        <td>Подоперация</td>
+        <td>@Model.Uvorn</td>
+        <td>Табельный номер</td>
+        <td>@Model.Pernr</td>
+    </tr>
+    <tr>
+        <td>Номер материала</td>
+        <td>@Model.Matnr</td>
+        <td>ФИО</td>
+        <td>@Model.PernrFn</td>
+    </tr>
+    <tr>
+        <td>Наименование материала</td>
+        <td>@Model.MatnrTxt</td>
+        <td>Самое позднее начало</td>
+        <td>@Model.Ssavd</td>
+    </tr>
+    <tr>
+        <td>Номер рабочего места</td>
+        <td>@Model.Arbpl</td>
+        <td>Самое позднее окончание</td>
+        <td>@Model.Ssedd</td>
+    </tr>
+    <tr>
+        <td>Наменование рабочего места</td>
+        <td>@Model.ArbplTxt</td>
+        <td>Пользоват. статус</td>
+        <td>@Model.Usttxt</td>
+    </tr>
+    <tr>
+        <td>Завод</td>
+        <td>@Model.Werks</td>
+        <td>Статус</td>
+        <td>@Model.Steus</td>
+    </tr>
+    <tr>
+        <td>Рабочее время(План)</td>
+        <td>@Model.Acti3</td>
+        <td>Ед. изм. пл.раб.вр.</td>
+        <td>@Model.Unit3</td>
+    </tr>
+    <tr>
+        <td>Рабочее время(Факт)</td>
+        <td>@Model.Ism03</td>
+        <td>Ед. изм. раб. времен.</td>
+        <td>@Model.Ile03</td>
+    </tr>
+    <tr>
+        <td>Код диагностики</td>
+        <td>@Model.Diaco</td>
+        <td>Описание проблемы</td>
+        <td>@Model.DiacoTxt</td>
+    </tr>
+
+</table>

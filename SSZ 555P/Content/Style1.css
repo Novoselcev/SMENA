@@ -1,0 +1,599 @@
+﻿#searchTab {
+    color: #fff;
+}
+.dxpcLite_DevEx .dxpc-mainDiv
+{    
+    border: none !important;
+}
+.popup__main
+{
+    background-image: url("Images/TransparentBackground.png") !important;
+    background-repeat: repeat;
+}
+#PopupControl1_PWH-1
+{
+    background-color: #015db9 !important;
+    border: 1px solid #6d6d6d;
+    border-bottom: none;
+}
+.searchTabHeader
+{
+    background-color: #015db9 !important;
+    color: #fff;
+    font-size: 16px;
+    padding: 7px 15px;
+}
+.confirmTabHeader
+{
+    background-color: #015db9 !important;
+    color: #fff;
+    font-size: 16px;
+    padding: 7px 15px;
+}
+.popup__table_top
+{
+    background-color: #1a1a1a;
+    border: 1px solid #6d6d6d;
+    border-top: none;
+    border-bottom: none;
+    color: #fff;
+    width: 600px;
+}
+.popup__table_top td
+{
+    padding: 10px 10px 10px 20px;
+    font-size: 14px;
+}
+.popup__table_mid
+{
+    background-color: #1a1a1a;
+    border: 1px solid #6d6d6d;
+    border-top: none;
+    color: #fff;
+    width: 600px;
+}
+.popup__table_mid td
+{
+    text-align: left;
+    padding: 10px 0px 10px 20px;
+    font-size: 14px;
+}
+.popup__table_bot
+{
+    background-color: #1a1a1a;
+    border: 1px solid #6d6d6d;
+    width: 600px;
+}
+
+
+
+
+
+.popup__table_confirm
+{
+    background-color: #1a1a1a;
+    border: 1px solid #6d6d6d;
+    border-top: none;
+    border-bottom: none;
+    width: 560px;   
+}
+
+.popup__table_confirm td input[type="text"] {
+         height:30px;
+         font-size:16px;
+         width:99%;
+    }
+
+.popup__table_confirm td #Qmgrp, #Fegrp, #Otgrp,  #Qmcod, #Fecod , #Oteil {
+        
+         font-size:16px;
+         width:99%;
+         background-color:#FFF;
+    }
+
+
+.popup__table_confirm1
+{
+    background-color: #1a1a1a;
+    border: 1px solid #6d6d6d;
+    border-top: none;
+    border-bottom: none;
+    
+}
+
+.popup__table_confirm1 td input[type="text"] {
+         height:47px;
+         font-size:16px;
+         width:98%;
+    }
+
+.popup__table_confirm1 td #Qmgrp, #Fegrp, #Otgrp,  #Qmcod, #Fecod , #Oteil, #Coord {
+        
+         font-size:16px;
+         width:99%;
+         background-color:#FFF;
+    }
+
+
+
+
+#Qmgrp td, #Fegrp td, #Otgrp td,  #Qmcod td, #Fecod td, #Oteil td, #Coord td {
+background-color:#fff;
+}
+#Qmgrp_DDD_PW-1 td, #Otgrp_DDD_PW-1 td, #Fegrp_DDD_PW-1 td, #Qmcod_DDD_PW-1 td, #Fecod_DDD_PW-1 td, #Oteil_DDD_PW-1 td, #Coord_DDD_PW-1 td {
+        
+         padding: 5px 0px 5px 10px;
+         font-size: 11px;
+         background-color: #FFFFFF;
+    }
+
+    #Qmgrp_DDD_PW-1 td:first-child {
+        width:50px;
+    }
+/*.dxeListBoxItem_DevEx .dxeFTM .dxeListBoxItemHover_DevEx*/
+#Qmgrp_DDD_L_LBT tr, .dxeListBoxItem_DevEx .dxeTM  .dxeListBoxItemSelected_DevEx {
+background-color:red !important;
+}
+
+
+textarea#Ltxa1 {
+   width:556px;
+   height:80px;
+   font-size:14px;
+}
+
+textarea#Text {
+   width:95%;
+   padding: 0 15px;
+   height:80px;
+   font-size:14px;
+}
+
+input#TextBox1_I
+{
+    height: 35px;
+}
+
+.popup__table_confirm .dxeTextBoxSys td.dxic {
+    padding: 0px;
+    overflow: hidden;
+}
+
+.popup__table_confirm td
+{
+    text-align: left;
+    padding: 10px 0px 10px 20px;
+    font-size: 14px;
+}
+.popup__table_confirm tr:nth-child(2n) td:nth-child(2n+1)
+{
+    background-color: #ccdbf0;
+}
+.popup__table_confirm tr:nth-child(2n+1) td:nth-child(2n+1)
+{
+    background-color: #94bbe3;
+}
+.popup__table_confirm tr:nth-child(2n) td:nth-child(2n)
+{
+    background-color: #cccccc;
+}
+.popup__table_confirm tr:nth-child(2n+1) td:nth-child(2n)
+{
+    background-color: #e6e6e6;
+}
+
+
+.popup__table_confirm1 .dxeTextBoxSys td.dxic {
+    padding: 0px;
+    overflow: hidden;
+}
+
+.popup__table_confirm1 td
+{
+    text-align: left;
+    padding: 10px 0px 10px 20px;
+    font-size: 14px;
+}
+.popup__table_confirm1 tr:nth-child(2n) td:nth-child(2n+1)
+{
+    background-color: #ccdbf0;
+}
+.popup__table_confirm1 tr:nth-child(2n+1) td:nth-child(2n+1)
+{
+    background-color: #94bbe3;
+}
+.popup__table_confirm1 tr:nth-child(2n) td:nth-child(2n)
+{
+    background-color: #cccccc;
+}
+.popup__table_confirm1 tr:nth-child(2n+1) td:nth-child(2n)
+{
+    background-color: #e6e6e6;
+}
+
+.table5 {
+height:300px;
+display:block;
+    overflow:hidden;
+    overflow-y:auto;
+margin-top:5em;
+}
+
+
+
+/*.table5 tbody {
+    height:100%;
+    display:block;
+    overflow:hidden;
+    overflow-y:auto;
+}*/
+
+   /* .table5 tr {
+    display:block;
+    }*/
+
+
+.table5 .checkT {
+ background-color:aqua;
+}
+
+
+
+
+.table5 .check_td td {
+  background-color:#0051a3 !important;
+  color:#ffffff !important;
+}
+
+.table5 .check_din td {
+  background-color:#064483 !important;
+  color:#ffffff !important;
+}
+
+input#item_width {
+ height:35px;
+ width:100px;
+}
+
+
+input#item_fontSize {
+ height:35px;
+ width:100px;
+}
+
+input#Posnr, input#Anzfehler, input#Fmgeig, input#Prueflinr {
+height:35px;
+}
+
+
+
+
+
+#ConfirmOperationPopup_PWC-1.dxpc-content
+{
+    padding: 0px;
+}
+#ConfirmOperationPopup_PWH-1
+{   
+    background-color: #015db9 !important;
+    border: 1px solid #6d6d6d;
+    border-bottom: none;
+}
+#ConfirmOperationPopup_PWH-1 .dxpcLite_DevEx .dxpc-header
+{
+    background-color: #015db9 !important;
+    width: 100%;
+    color: #fff;
+    font-size: 16px;
+    padding: 7px 15px;
+}
+
+#ConfirmOperationPopup_PWH-1 .dxpc-headerContent
+{
+    float: left;
+    border: none;
+    padding: 0px;
+}
+#ConfirmOperationPopup_PWH-1 .dxpc-content
+{
+    padding: 0px;
+}
+/*************************************************************************************************/
+#PopupMessage_PWC-1.dxpc-content
+{
+    padding: 0px;
+}
+#PopupMessage_PWH-1, PopupTotalList_PWH-1
+{   
+    background-color: #015db9 !important;
+    border: 1px solid #6d6d6d;
+    border-bottom: none;
+}
+#ConfirmOperationPopup_PWH-1 .dxpcLite_DevEx .dxpc-header
+{
+    background-color: #015db9 !important;
+    width: 100%;
+    color: #fff;
+    font-size: 16px;
+    padding: 7px 15px;
+}
+
+#PopupMessage_PWH-1 .dxpc-headerContent,  PopupTotalList_PWH-1 .dxpc-headerContent
+{
+    float: left;
+    border: none;
+    padding: 0px;
+}
+#PopupMessage_PWH-1 .dxpc-content, PopupTotalList_PWH-1 .dxpc-content
+{
+    padding: 0px;
+}
+
+
+
+
+
+/***************************************************************************************************/
+.dxpcLite_DevEx .dxpc-mainDiv, .dxpcLite_DevEx.dxpc-mainDiv, .dxdpLite_DevEx .dxpc-mainDiv, .dxdpLite_DevEx.dxpc-mainDiv
+{
+    background-color: transparent !important;
+}
+
+
+#PopupRedAlertSimple_PWC-1.dxpc-content
+{
+    padding: 0px;
+}
+
+#PopupRedAlert_PWC-1.dxpc-content
+{
+    padding: 0px;
+}
+#PopupRedAlert_PWH-1
+{   
+    background-color: red !important;
+    color: #fff;
+    border: 1px solid #6d6d6d;
+    border-bottom: none;
+}
+
+#PopupRedAlert_PWH-1 .dxpcLite_DevEx .dxpc-header
+{
+    background-color: red !important;
+    width: 100%;
+    color: #fff;
+    font-size: 16px;
+    padding: 7px 15px;
+}
+.dxpc-headerContent {
+    float: none;
+}
+#PopupRedAlert_PWH-1 .dxpc-headerContent
+{
+    background-color: red !important;
+    border: none;
+    padding: 0px;
+}
+
+#PopupRedAlert_PWH-1 .dxpc-headerContent .redAlertTabHeader
+{
+    float: left;
+    color: #fff;
+    font-size: 16px;    
+    padding: 7px 15px 10px 15px;
+}
+
+#PopupRedAlert_PWH-1 .dxpc-content
+{
+    padding: 0px;
+}
+
+.comStyle .dxeTM:hover , .comStyle .dxeFTM:hover ,.comStyle .dxeLTM:hover  {
+ background-color:#015db9 !important;
+ color:white;
+}
+
+#tabSetting {
+    background-color: #2a2a2a; padding:15px ;
+    min-height:300px;
+    max-height:2000px;
+    width:100%;
+}
+
+
+
+#BottomPanel_EB  {
+     background-color: #333333;
+    border-color: #b4b4b4;
+}
+
+
+/*********************************Класс для настройки меню настроек*************************************************/
+.tabSetting {
+   // width:100%;
+    margin-left:1.4em;
+    padding:0px;
+}
+
+    .tabSetting td:first-child {
+        width:170px;height:100%;min-height:400px;border-right:1px solid #777;
+    }
+
+        .tabSetting td:first-child ul {
+          line-height:2.2em;color:#bbb;font-size:16px;list-style:none; margin-left: -10px;
+        }
+
+    .tabSetting td ul li:hover {
+      color:#fff;
+    }
+
+#commonset {
+    display:none;
+    visibility:hidden;
+}
+
+#menusetTable {
+color:#fff;
+font-weight:bold;
+}
+
+.HeaderSetting {
+    width:400px;
+    border-bottom:1px solid #DDD;
+    color:#ffffff; 
+    font-size:18px;
+    padding:0px 0px 10px 10px;
+    margin-bottom:15px;
+}
+/*********************************Класс для настройки меню настроек*************************************************/
+.SpinEd {
+font-size:14px;
+
+}
+
+.dxgv .dx-ar {
+text-align:right !important;
+}
+
+.dxgvCommandColumn_DevEx a {
+color:red !important;
+}
+
+td.dxgv.dx-ac.dxgvBatchEditCell_DevEx {
+    padding-left:3.3em;
+}
+
+td.dxgv.dx-ar.dxgvBatchEditCell_DevEx {
+  
+
+   
+
+}
+
+td.dxgv.dx-ar {
+padding:0em 1em 0em 0em !important;
+margin:0px !important;
+}
+
+table#GridViewSetOper.dxgvControl_DevEx {
+  margin-top: 4.7em;
+}
+
+table #GridViewSetOper_DXEditor3 {
+    width: 10em !important;
+    margin-right: -3.8em;
+  
+}
+
+    table #GridViewSetOper_DXEditor3 td {
+    width:1em !important;
+    }
+
+    table #GridViewSetOper_DXEditor3 td.dxic {
+        width: 4em !important;
+    height: 40px;
+    font-size: 16px;
+    }
+
+
+.ButAct {
+    color:#fff;
+    font-size:16px;
+    margin-top:10px;
+    margin-left:-15em;
+    float:right;
+    z-index:10;
+
+}
+
+    .ButAct a {
+        padding:10px;
+        background-color:#0051a3;
+       cursor:pointer;
+    }
+
+
+        .ButAct a:hover {
+        
+        background-color:#f26720;
+        cursor:pointer;
+    }
+
+        .ButAct  #save1 {
+        margin-left:2em;
+        }
+
+
+.table5 {
+ 
+}
+
+    .table5 td {
+   
+    color:#1a1a1a;
+    border:1px solid #cccccc  ;
+    font-size:1.3em;
+    padding:10px 20px;
+    }
+
+        .table5 tr:nth-child(2n+1) {
+              background-color:#b4b4b4;
+        }
+
+        .table5 tr:nth-child(2n) {
+             background-color:#fff;
+        }
+
+    .table5 th {
+       background-color:#024C97;
+    color:#fff;
+    border:1px solid #2a2a2a  ;
+    font-size:1.2em;
+    padding:10px 20px;
+    }
+
+
+    .tableDef {
+      margin: 0px 0px 15px 10px;
+}
+
+    .tableDef td {
+   
+    color:#1a1a1a;
+    border:1px solid #cccccc  ;
+    font-size:1.0em;
+    padding:10px 15px;
+    }
+
+        .tableDef tr:nth-child(2n+1) {
+              background-color:#b8d2f6;
+        }
+
+        .tableDef tr:nth-child(2n) {
+             background-color:#fff;
+        }
+
+    .tableDef th {
+       background-color:#024C97;
+    color:#fff;
+    border:1px solid #2a2a2a  ;
+    font-size:1.2em;
+    padding:10px 20px;
+    }
+
+
+
+div#TreeList_PEF_PWC-1.dxpc-content {
+ background-color:#2f2f2f !important;
+ opacity: 1 !important;
+ width:500px !important;
+}
+
+span#TreeList_PEF_PWH-1T.dxpc-headerText.dx-vam {
+color:#fff;
+font-size:14px;
+}
+
+.highlight {
+background-color:#f2bf46;
+}
