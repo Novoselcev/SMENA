@@ -11,6 +11,7 @@
 @Html.DevExpress().PageControl(settings =>
 {
     settings.Name = "TabControl";
+    settings.Width = 800;
     settings.ActiveTabIndex = Convert.ToInt32(ViewBag.pageID);
     settings.Styles.Content.Border.BorderColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
     settings.Styles.Content.Border.BorderStyle = BorderStyle.Solid;
@@ -110,7 +111,8 @@
         {
             tab.Name = "Tab 4";
             tab.Text = "Серийный №";
-           // tab.Visible = ViewBag.SerMumber;
+            tab.NewLine = true;
+            // tab.Visible = ViewBag.SerMumber;
             tab.ActiveTabStyle.Border.BorderColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
             tab.TabStyle.BackgroundImage.ImageUrl ="/Content/Images/hidden.png";
             tab.TabStyle.Font.Size = 14;

@@ -62,6 +62,39 @@
             }
         };
 
+        settings.HtmlDataCellPrepared = (sender, e) =>
+        {
+
+            if (e.DataColumn.FieldName == "Dappl")
+            {
+                if (Convert.ToString(e.GetValue("Dappl")) == "PDF")
+                {
+                    e.Cell.Text = "<div style = 'text-align:center;'><img height='30px' src='/Content/Images/icon/pdf.png' /></div>";
+                }
+                else if (Convert.ToString(e.GetValue("Dappl")) == "DOC")
+                {
+                    e.Cell.Text = "<div style = 'text-align:center;'><img height='30px' src='/Content/Images/icon/doc.png' /></div>";
+                }
+                else if (Convert.ToString(e.GetValue("Dappl")) == "XLS")
+                {
+                    e.Cell.Text = "<div style = 'text-align:center;'><img height='30px' src='/Content/Images/icon/xls.png' /></div>";
+                }
+                else if (Convert.ToString(e.GetValue("Dappl")) == "TXT")
+                {
+                    e.Cell.Text = "<div style = 'text-align:center;'><img height='30px' src='src='/Content/Images/icon/txt.png' /></div>";
+                }
+                else if (Convert.ToString(e.GetValue("Dappl")) == "JPG")
+                {
+                    e.Cell.Text = "<div style = 'text-align:center;'><img height='30px' src='src='/Content/Images/icon/jpg.png' /></div>";
+                }
+                else
+                {
+
+                }
+            }
+        };
+
+
         settings.Width = 800;
         settings.Styles.Header.BackgroundImage.ImageUrl = "/Content/Images/hidden.png";
         settings.Styles.Header.BackColor = System.Drawing.ColorTranslator.FromHtml("#024c97");
